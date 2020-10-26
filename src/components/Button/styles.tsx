@@ -29,7 +29,7 @@ const city = css`
 `;
 
 const primary = css`
-  background: var(--sbpulsar-color-primary-normal);
+  background: var(--sbpulsar-color-primary-normals);
   color: var(--sbpulsar-color-text-darkbg-normal);
 
   :hover,

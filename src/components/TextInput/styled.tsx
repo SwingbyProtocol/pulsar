@@ -95,7 +95,7 @@ export const Input = styled.input`
   text-decoration: none;
   background: transparent;
   color: inherit;
-  text-indent: ${em(PulsarConstants.size.closet, PulsarConstants.size.room)};
+  text-indent: ${em(PulsarConstants.size.box, PulsarConstants.size.room)};
   padding-right: ${em(PulsarConstants.size.closet, PulsarConstants.size.room)};
   font-size: ${em(PulsarConstants.size.room)};
   font-weight: 700;
