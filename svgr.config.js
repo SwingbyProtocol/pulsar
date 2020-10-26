@@ -1,0 +1,21 @@
+module.exports = {
+  expandProps: 'end',
+  template: function template({ template }, opts, { imports, componentName, props, jsx, exports }) {
+    return template.ast`
+      import styled from 'styled-components';
+      ${imports}
+      const SvgComponent = (${props}) => ${jsx};
+      const ${componentName} = styled(SvgComponent)\`
+        box-sizing: border-box;
+        width: auto;
+        height: 1em;
+        fill: currentColor;
+        display: inline-flex;
+      \`;
+      ${exports}
+    `;
+  },
+  svgoConfig: {
+    plugins: [{ sortAttrs: true }, { removeViewBox: false }, { removeDimensions: true }],
+  },
+};

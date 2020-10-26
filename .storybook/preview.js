@@ -20,6 +20,7 @@ const Container = styled.div`
 
 const section = css`
   background: var(--sbpulsar-color-bg-normal);
+  color: var(--sbpulsar-color-text-normal);
   padding: 1em;
   flex-grow: 1;
   flex-shrink: 0;
