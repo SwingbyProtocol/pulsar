@@ -1,3 +1,2 @@
-export { pulsarLightColors } from './light';
-export { pulsarDarkColors } from './dark';
+export { pulsarLightColors, pulsarDarkColors } from './colors';
 export { PulsarGlobalAutoTheming } from './PulsarGlobalAutoTheming';

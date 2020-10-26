@@ -4,6 +4,8 @@ export const PulsarConstants = {
   readable: (color: string) => readableColor(color, '#2b374a', '#fff', true),
 
   size: {
+    box: 4,
+    drawer: 8,
     closet: 12,
     room: 14,
     house: 16,
