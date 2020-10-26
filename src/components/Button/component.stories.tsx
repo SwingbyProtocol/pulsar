@@ -14,7 +14,7 @@ export default meta;
 export const Primary = () => (
   <Container>
     {SIZES.map((size) => (
-      <Button variant="primary" size={size}>
+      <Button variant="primary" size={size} key={size}>
         A button (size={size})
       </Button>
     ))}
@@ -24,7 +24,7 @@ export const Primary = () => (
 export const Secondary = () => (
   <Container>
     {SIZES.map((size) => (
-      <Button variant="secondary" size={size}>
+      <Button variant="secondary" size={size} key={size}>
         A button (size={size})
       </Button>
     ))}

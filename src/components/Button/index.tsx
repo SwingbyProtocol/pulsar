@@ -1,9 +1,12 @@
 import React, { useCallback } from 'react';
 import { useSpring, animated } from 'react-spring';
 
+import { Testable } from '../../modules/testing';
+
 import { Size, StyledButton, Shadow, Variant } from './styles';
 
-type Props = Omit<React.AllHTMLAttributes<HTMLElement>, 'size'> & { size: Size; variant: Variant };
+type Props = Omit<React.AllHTMLAttributes<HTMLElement>, 'size'> &
+  Testable & { size: Size; variant: Variant };
 
 export const Button = ({ onClick, ...props }: Props) => {
   const [{ shadow, opacity }, set] = useSpring(() => ({
