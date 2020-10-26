@@ -56,7 +56,7 @@ const danger = css`
 `;
 
 const focused = css`
-  border-color: var(--sbpulsar-color-bg-primary-normal);
+  border-color: var(--sbpulsar-color-primary-normal);
 `;
 
 export const InputContainer = styled.div<{ size: Size; state: State; isFocused: boolean }>`

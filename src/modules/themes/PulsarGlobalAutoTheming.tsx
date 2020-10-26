@@ -1,7 +1,6 @@
 import { createGlobalStyle as css } from 'styled-components';
 
-import { pulsarLightColors } from './light';
-import { pulsarDarkColors } from './dark';
+import { pulsarLightColors, pulsarDarkColors } from './colors';
 
 export const PulsarGlobalAutoTheming = css`
   :root {

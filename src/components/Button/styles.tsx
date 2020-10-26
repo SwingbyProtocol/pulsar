@@ -29,24 +29,24 @@ const city = css`
 `;
 
 const primary = css`
-  background: var(--sbpulsar-color-bg-primary-normal);
-  color: var(--sbpulsar-color-text-dark-bg-normal);
+  background: var(--sbpulsar-color-primary-normal);
+  color: var(--sbpulsar-color-text-darkbg-normal);
 
   :hover,
   :active {
-    background: var(--sbpulsar-color-bg-primary-active);
+    background: var(--sbpulsar-color-primary-active);
   }
 `;
 
 const secondary = css`
-  border: 2px solid var(--sbpulsar-color-bg-primary-normal);
+  border: 2px solid var(--sbpulsar-color-primary-normal);
   background: transparent;
-  color: var(--sbpulsar-color-bg-primary-normal);
+  color: var(--sbpulsar-color-primary-normal);
 
   :hover,
   :active {
-    background: var(--sbpulsar-color-bg-primary-active);
-    color: var(--sbpulsar-color-text-dark-bg-normal);
+    background: var(--sbpulsar-color-primary-active);
+    color: var(--sbpulsar-color-text-darkbg-normal);
     border-color: transparent;
   }
 `;
@@ -83,5 +83,5 @@ export const Shadow = styled.div`
   border-radius: ${em(PulsarConstants.radius.normal)};
   pointer-events: none;
   user-select: none;
-  color: var(--sbpulsar-color-bg-primary-normal);
+  color: var(--sbpulsar-color-primary-normal);
 `;
