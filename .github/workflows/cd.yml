@@ -1,0 +1,42 @@
+name: CD
+on:
+  push:
+    branches:
+      - master
+      - alpha
+
+jobs:
+  build:
+    name: Build, test, and publish
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - uses: bahmutov/npm-install@v1
+
+      - name: Build
+        run: |
+          yarn build
+          yarn build-storybook
+
+      - name: UI tests
+        run: yarn percy exec -- cypress run -e CI=true
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/alpha'
+        continue-on-error: true
+        uses: maxheld83/ghpages@v0.3.0
+        env:
+          BUILD_DIR: storybook-static
+          GH_PAT: ${{ secrets.GH_TOKEN_SEMANTIC_RELEASE }}
+
+      - name: Deploy to NPM
+        run: yarn semantic-release --dry-run
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN_SEMANTIC_RELEASE }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

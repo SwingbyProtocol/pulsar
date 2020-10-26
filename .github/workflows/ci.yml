@@ -1,0 +1,27 @@
+name: CI
+on: [pull_request]
+
+jobs:
+  build:
+    name: Build, lint, and test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - uses: bahmutov/npm-install@v1
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Test
+        run: yarn test --ci --coverage --maxWorkers=2
+
+      - name: UI tests
+        run: |
+          yarn build-storybook
+          yarn percy exec -- cypress run -e CI=true
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
