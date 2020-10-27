@@ -39,9 +39,9 @@ const primary = css`
 `;
 
 const secondary = css`
-  border: 2px solid var(--sbpulsar-color-primary-normal);
-  background: transparent;
-  color: var(--sbpulsar-color-primary-normal);
+  border: 2px solid var(--sbpulsar-button-secondary-border);
+  background: var(--sbpulsar-button-secondary-bg);
+  color: var(--sbpulsar-button-secondary-text);
 
   :hover,
   :active {

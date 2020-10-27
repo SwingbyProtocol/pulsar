@@ -23,6 +23,10 @@ export const pulsarLightColors = css`
 
   --sbpulsar-color-border-normal: #d7dade;
   --sbpulsar-color-border-danger: #f7c5c3;
+
+  --sbpulsar-button-secondary-bg: transparent;
+  --sbpulsar-button-secondary-border: var(--sbpulsar-color-primary-normal);
+  --sbpulsar-button-secondary-text: var(--sbpulsar-color-primary-normal);
 `;
 
 export const pulsarDarkColors = css`
@@ -33,4 +37,8 @@ export const pulsarDarkColors = css`
   --sbpulsar-color-text-normal: var(--sbpulsar-color-text-darkbg-normal);
   --sbpulsar-color-text-masked: var(--sbpulsar-color-text-darkbg-masked);
   --sbpulsar-color-text-accent: var(--sbpulsar-color-text-darkbg-accent);
+
+  --sbpulsar-button-secondary-bg: var(--sbpulsar-color-text-darkbg-normal);
+  --sbpulsar-button-secondary-border: transparent;
+  --sbpulsar-button-secondary-text: var(--sbpulsar-color-text-lightbg-accent);
 `;
