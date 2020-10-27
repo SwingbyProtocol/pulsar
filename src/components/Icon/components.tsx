@@ -13,7 +13,5 @@ export { ReactComponent as Medium } from './assets/Medium.svg';
 export { ReactComponent as Pinterest } from './assets/Pinterest.svg';
 export { ReactComponent as SwapHorizontal } from './assets/SwapHorizontal.svg';
 export { ReactComponent as SwapVertical } from './assets/SwapVertical.svg';
-export { ReactComponent as SwingbyColor } from './assets/SwingbyColor.svg';
-export { ReactComponent as SwingbyFlatColor } from './assets/SwingbyFlatColor.svg';
 export { ReactComponent as Twitter } from './assets/Twitter.svg';
 export { ReactComponent as YouTube } from './assets/YouTube.svg';
