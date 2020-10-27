@@ -89,9 +89,3 @@ export const Component = ({
 };
 
 Component.displayName = 'TextInput';
-
-Component.Label = Label;
-Component.Input = Input;
-Component.InputContainer = InputContainer;
-Component.Left = Left;
-Component.Right = Right;
