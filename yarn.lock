@@ -2828,10 +2828,10 @@
     "@svgr/plugin-svgo" "^5.4.0"
     loader-utils "^2.0.0"
 
-"@swingby-protocol/eslint-config@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@swingby-protocol/eslint-config/-/eslint-config-1.0.2.tgz#35263a0d6943e91862607490a2aa50efee65c340"
-  integrity sha512-4leOtjCbj8+ezg+Yo4l17FudobTtPwWLoeqXetZVDVgH7Zd0PqtY1wTH0VHtwAmzmedr8pKs2YdEks0RhMGPOw==
+"@swingby-protocol/eslint-config@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@swingby-protocol/eslint-config/-/eslint-config-1.0.3.tgz#93cf1eed3774c2a45bbf4c0c57c698149bbb4981"
+  integrity sha512-47SyDsIG5SowdaijcgNtfBPI8OeBex/j5XbAxHX65rlxRS1wrkOHthTVNUtpZFLWtqYgJsU93xzi0O3HaG7Org==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^4.6.0"
     "@typescript-eslint/parser" "^4.6.0"
@@ -2845,10 +2845,10 @@
     eslint-plugin-react "^7.21.5"
     eslint-plugin-react-hooks "^4.2.0"
 
-"@swingby-protocol/prettier-config@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@swingby-protocol/prettier-config/-/prettier-config-1.0.0.tgz#42d320794d4705df2fed5037ba6243d40ef1337b"
-  integrity sha512-ugPj1pYogquSqQL3S+gR2EJp+c0t6zaU50uayD7PXeM32x8B9ZynC5o7h91nYxnCxBlVb5DoPcLNQ5z6rKcSFA==
+"@swingby-protocol/prettier-config@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@swingby-protocol/prettier-config/-/prettier-config-1.0.2.tgz#ff4c03ac7ad3dab1d02a914d31debcf9441fa3e8"
+  integrity sha512-ROirdMQDD6PxHTC+4J7pFH4ik8Yf3frLwf6XDBjuFKKfKCqvpqkHWHnYCJG1PS5uODmMCiH+m1JoIYr/vDfnAA==
 
 "@tootallnate/once@1":
   version "1.1.2"
