@@ -21,7 +21,7 @@ export const Button = ({ onClick, ...props }: Props) => {
       set({ shadow: 1, opacity: 0 });
       onClick?.(evt);
     },
-    [onClick],
+    [onClick, set],
   );
 
   return (

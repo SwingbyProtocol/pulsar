@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Meta } from '@storybook/react';
-import { Button } from './';
+
 import { SIZES } from './styles';
+
+import { Button } from './';
 
 const meta: Meta = {
   title: 'Button',

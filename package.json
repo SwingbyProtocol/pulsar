@@ -30,14 +30,6 @@
       "pre-commit": "tsdx lint"
     }
   },
-  "prettier": {
-    "arrowParens": "always",
-    "printWidth": 100,
-    "proseWrap": "always",
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "all"
-  },
   "size-limit": [
     {
       "path": "dist/swingby-components.cjs.production.min.js",
@@ -63,6 +55,8 @@
     "@storybook/react": "^6.0.26",
     "@svgr/rollup": "^5.4.0",
     "@svgr/webpack": "^5.4.0",
+    "@swingby-protocol/eslint-config": "^1.0.2",
+    "@swingby-protocol/prettier-config": "^1.0.0",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
     "@types/styled-components": "^5.1.4",
@@ -84,5 +78,8 @@
     "polished": "^4.0.3",
     "react-spring": "^8.0.27",
     "styled-components": "^5.2.0"
+  },
+  "resolutions": {
+    "**/@typescript-eslint/eslint-plugin": "4.6.0"
   }
 }

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+
 import { Button } from '../Button';
 
-import { TextInput } from './';
 import { SIZES } from './styled';
+
+import { TextInput } from './';
 
 export default {
   title: 'TextInput',
