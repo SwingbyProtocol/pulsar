@@ -1,20 +1,10 @@
-import React from 'react';
 import { createGlobalStyle as css } from 'styled-components';
 
-import { PulsarGlobalAutoTheming } from '../themes';
-
-export const PulsarGlobalStyles = () => (
-  <>
-    <PulsarGlobalAutoTheming />
-    <Styles />
-  </>
-);
-
-const Styles = css`
+export const PulsarGlobalStyles = css`
   :root {
     box-sizing: border-box;
-    background: var(--sbpulsar-color-bg-normal);
-    color: var(--sbpulsar-color-color-normal);
+    background: ${({ theme }) => theme.pulsar.color.bg.normal};
+    color: ${({ theme }) => theme.pulsar.color.text.normal};
     font-family: -apple-system, '.SFNSText-Regular', 'San Francisco', BlinkMacSystemFont,
       '.PingFang-SC-Regular', 'Microsoft YaHei', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial,
       sans-serif;

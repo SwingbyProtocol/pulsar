@@ -27,6 +27,7 @@ export const Button = ({ onClick, ...props }: Props) => {
   return (
     <StyledButton role="button" {...props} onClick={click} as={props.href ? 'a' : 'button'}>
       <Shadow
+        variant={props.variant}
         as={animated.div}
         style={{
           opacity,
