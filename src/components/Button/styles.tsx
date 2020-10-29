@@ -37,32 +37,17 @@ const primary = css`
   }
 `;
 
-const secondaryDark = css`
-  border: none;
-  background: ${({ theme }) => theme.pulsar.color.text.normal};
-  color: ${({ theme }) => theme.pulsar.components.button.secondary.active.text};
-
-  :hover,
-  :active {
-    background: ${({ theme }) => theme.pulsar.color.text.accent};
-    color: ${({ theme }) => theme.pulsar.components.button.secondary.active.text};
-  }
-`;
-
 const secondary = css`
-  border: 2px solid ${({ theme }) => theme.pulsar.color.primary.normal};
-  background: transparent;
+  border: 2px solid ${({ theme }) => theme.pulsar.components.button.secondary.idle.border};
+  background: ${({ theme }) => theme.pulsar.components.button.secondary.idle.bg};
   color: ${({ theme }) => theme.pulsar.components.button.secondary.idle.text};
 
   :hover,
   :active {
-    background: ${({ theme }) => theme.pulsar.color.primary.active};
+    background: ${({ theme }) => theme.pulsar.components.button.secondary.active.bg};
     color: ${({ theme }) => theme.pulsar.components.button.secondary.active.text};
-    border-color: transparent;
+    border-color: ${({ theme }) => theme.pulsar.components.button.secondary.active.border};
   }
-
-  ${({ theme }) =>
-    (theme.pulsar.id === 'PulsarAccent' || theme.pulsar.id === 'PulsarDark') && secondaryDark};
 `;
 
 export const StyledButton = styled.button<{ size: Size; variant: Variant }>`
@@ -87,7 +72,15 @@ export const StyledButton = styled.button<{ size: Size; variant: Variant }>`
   ${({ variant }) => variant === 'secondary' && secondary};
 `;
 
-export const Shadow = styled.div`
+const shadowPrimary = css`
+  color: ${({ theme }) => theme.pulsar.color.primary.active};
+`;
+
+const shadowSecondary = css`
+  color: ${({ theme }) => theme.pulsar.components.button.secondary.active.bg};
+`;
+
+export const Shadow = styled.div<{ variant: Variant }>`
   font-size: 1rem;
   position: absolute;
   top: 0;
@@ -97,5 +90,7 @@ export const Shadow = styled.div`
   border-radius: ${({ theme }) => em(theme.pulsar.size.box)};
   pointer-events: none;
   user-select: none;
-  color: ${({ theme }) => theme.pulsar.color.primary.active};
+
+  ${({ variant }) => variant === 'primary' && shadowPrimary};
+  ${({ variant }) => variant === 'secondary' && shadowSecondary};
 `;
