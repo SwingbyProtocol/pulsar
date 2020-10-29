@@ -6,6 +6,7 @@ export const PulsarLight = {
     color: {
       bg: {
         normal: '#fff',
+        masked: '#f2f2f2',
       },
 
       text: {
@@ -56,7 +57,10 @@ export const PulsarLight = {
 
     components: {
       button: {
-        primary: { idle: { text: '#fff' }, active: { text: '#fff' } },
+        primary: {
+          idle: { text: '#fff' },
+          active: { text: '#fff' },
+        },
         secondary: {
           idle: { text: '#31d5b8', border: '#31d5b8', bg: 'transparent' },
           active: { text: '#fff', border: 'transparent', bg: '#21a68e' },

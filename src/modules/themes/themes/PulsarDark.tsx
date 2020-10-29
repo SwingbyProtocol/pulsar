@@ -13,6 +13,7 @@ export const PulsarDark: PulsarThemeType = {
 
       bg: {
         normal: '#0f1621',
+        masked: '#0f1621',
       },
 
       text: {
