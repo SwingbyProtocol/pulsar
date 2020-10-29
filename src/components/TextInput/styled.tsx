@@ -25,7 +25,7 @@ export const Label = styled.label`
 
 export const Description = styled.span`
   display: block;
-  color: var(--sbpulsar-color-text-normals);
+  color: ${({ theme }) => theme.pulsar.color.text.normal};
   font-size: ${({ theme }) => em(theme.pulsar.size.closet)};
   margin-top: ${({ theme }) => em(theme.pulsar.size.box, theme.pulsar.size.room)};
 `;
@@ -46,15 +46,15 @@ const city = css`
 `;
 
 const normal = css`
-  border-color: var(--sbpulsar-color-border-normal);
+  border-color: ${({ theme }) => theme.pulsar.color.border.normal};
 `;
 
 const danger = css`
-  border-color: var(--sbpulsar-color-border-danger);
+  border-color: ${({ theme }) => theme.pulsar.color.border.danger};
 `;
 
 const focused = css`
-  border-color: var(--sbpulsar-color-primary-normal);
+  border-color: ${({ theme }) => theme.pulsar.color.primary.active};
 `;
 
 export const InputContainer = styled.div<{ size: Size; state: State; isFocused: boolean }>`
@@ -62,9 +62,9 @@ export const InputContainer = styled.div<{ size: Size; state: State; isFocused: 
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background: var(--sbpulsar-color-bg-normal);
+  background: ${({ theme }) => theme.pulsar.color.bg.normal};
   border: 2px solid transparent;
-  color: var(--sbpulsar-color-text-accent);
+  color: ${({ theme }) => theme.pulsar.color.text.accent};
   overflow: hidden;
   font-size: ${({ theme }) => em(theme.pulsar.size.house)};
 
@@ -98,7 +98,7 @@ export const Input = styled.input`
   ${({ theme }) => transitions(['color'], `${theme.pulsar.duration.normal} ease-in-out`)};
 
   ::placeholder {
-    color: var(--sbpulsar-color-text-masked);
+    color: ${({ theme }) => theme.pulsar.color.text.placeholder};
   }
 `;
 

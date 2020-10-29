@@ -1,4 +1,4 @@
-import { PulsarLight, readable } from './PulsarLight';
+import { PulsarLight } from './PulsarLight';
 import { PulsarThemeType } from './PulsarThemeType';
 
 export const PulsarDark: PulsarThemeType = {
@@ -16,29 +16,16 @@ export const PulsarDark: PulsarThemeType = {
       },
 
       text: {
-        normal: readable.normal('black'),
-        masked: readable.masked('black'),
-        accent: readable.accent('black'),
-        primary: readable.primary('black'),
-        disabled: readable.disabled('black'),
-        placeholder: readable.placeholder('black'),
+        normal: '#f2f2f2',
+        masked: '#ccc',
+        accent: '#fff',
+        disabled: '#f00',
+        placeholder: '#818994',
       },
-    },
 
-    components: {
       button: {
-        secondary: {
-          idle: {
-            border: 'transparent',
-            bg: '#fff',
-            color: readable.normal('#fff'),
-          },
-          active: {
-            border: 'transparent',
-            bg: '#21a68e',
-            color: readable.normal('#fff'),
-          },
-        },
+        primary: { idle: { text: '#fff' }, active: { text: '#fff' } },
+        secondary: { idle: { text: '#2b374a' }, active: { text: '#2b374a' } },
       },
     },
   },

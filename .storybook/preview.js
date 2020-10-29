@@ -20,19 +20,13 @@ const Container = styled.div`
 
 const Section = styled.div`
   background: ${({ theme }) => theme.pulsar.color.bg.normal};
-  color: ${({ theme }) => theme.pulsar.color.readable.normal(theme.pulsar.color.bg.normal)};
+  color: ${({ theme }) => theme.pulsar.color.text.normal};
   padding: 1em;
   flex-grow: 1;
   flex-shrink: 0;
 `;
 
 export const decorators = [
-  (Story) => (
-    <PulsarThemeProvider>
-      <PulsarGlobalStyles />
-      <Story />
-    </PulsarThemeProvider>
-  ),
   (Story) => (
     <Container>
       <PulsarThemeProvider theme="light">
@@ -51,5 +45,11 @@ export const decorators = [
         </Section>
       </PulsarThemeProvider>
     </Container>
+  ),
+  (Story) => (
+    <PulsarThemeProvider>
+      <PulsarGlobalStyles />
+      <Story />
+    </PulsarThemeProvider>
   ),
 ];

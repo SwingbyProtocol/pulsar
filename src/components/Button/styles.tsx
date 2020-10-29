@@ -28,26 +28,41 @@ const city = css`
 
 const primary = css`
   background: ${({ theme }) => theme.pulsar.color.primary.normal};
-  color: ${({ theme }) => theme.pulsar.color.readable.normal(theme.pulsar.color.primary.normal)};
+  color: ${({ theme }) => theme.pulsar.color.button.primary.active.text};
 
   :hover,
   :active {
     background: ${({ theme }) => theme.pulsar.color.primary.active};
-    color: ${({ theme }) => theme.pulsar.color.readable.normal(theme.pulsar.color.primary.active)};
+    color: ${({ theme }) => theme.pulsar.color.button.primary.active.text};
+  }
+`;
+
+const secondaryDark = css`
+  border: none;
+  background: ${({ theme }) => theme.pulsar.color.text.normal};
+  color: ${({ theme }) => theme.pulsar.color.button.secondary.active.text};
+
+  :hover,
+  :active {
+    background: ${({ theme }) => theme.pulsar.color.text.accent};
+    color: ${({ theme }) => theme.pulsar.color.button.secondary.active.text};
   }
 `;
 
 const secondary = css`
-  border: 2px solid ${({ theme }) => theme.pulsar.components.button.secondary.idle.border};
-  background: ${({ theme }) => theme.pulsar.components.button.secondary.idle.bg};
-  color: ${({ theme }) => theme.pulsar.components.button.secondary.idle.color};
+  border: 2px solid ${({ theme }) => theme.pulsar.color.primary.normal};
+  background: transparent;
+  color: ${({ theme }) => theme.pulsar.color.button.secondary.idle.text};
 
   :hover,
   :active {
-    background: ${({ theme }) => theme.pulsar.components.button.secondary.active.bg};
-    color: ${({ theme }) => theme.pulsar.components.button.secondary.active.color};
-    border-color: ${({ theme }) => theme.pulsar.components.button.secondary.active.border};
+    background: ${({ theme }) => theme.pulsar.color.primary.active};
+    color: ${({ theme }) => theme.pulsar.color.button.secondary.active.text};
+    border-color: transparent;
   }
+
+  ${({ theme }) =>
+    (theme.pulsar.id === 'PulsarAccent' || theme.pulsar.id === 'PulsarDark') && secondaryDark};
 `;
 
 export const StyledButton = styled.button<{ size: Size; variant: Variant }>`
