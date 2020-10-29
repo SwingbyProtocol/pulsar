@@ -12,7 +12,7 @@ export const PulsarDark: PulsarThemeType = {
       ...PulsarLight.pulsar.color,
 
       bg: {
-        normal: '#2b374a',
+        normal: '#0f1621',
       },
 
       text: {
@@ -23,9 +23,21 @@ export const PulsarDark: PulsarThemeType = {
         placeholder: '#818994',
       },
 
+      border: {
+        normal: '#d7dade',
+        danger: '#fc012a',
+      },
+
       button: {
         primary: { idle: { text: '#fff' }, active: { text: '#fff' } },
         secondary: { idle: { text: '#2b374a' }, active: { text: '#2b374a' } },
+      },
+
+      input: {
+        idle: {
+          bg: '#1c232f',
+          border: 'transparent',
+        },
       },
     },
   },

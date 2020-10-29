@@ -46,7 +46,7 @@ const city = css`
 `;
 
 const normal = css`
-  border-color: ${({ theme }) => theme.pulsar.color.border.normal};
+  border-color: ${({ theme }) => theme.pulsar.color.input.idle.border};
 `;
 
 const danger = css`
@@ -62,7 +62,7 @@ export const InputContainer = styled.div<{ size: Size; state: State; isFocused: 
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background: ${({ theme }) => theme.pulsar.color.bg.normal};
+  background: ${({ theme }) => theme.pulsar.color.input.idle.bg};
   border: 2px solid transparent;
   color: ${({ theme }) => theme.pulsar.color.text.accent};
   overflow: hidden;
@@ -91,6 +91,7 @@ export const Input = styled.input`
   text-decoration: none;
   background: transparent;
   color: inherit;
+  height: 100%;
   text-indent: ${({ theme }) => em(theme.pulsar.size.closet, theme.pulsar.size.room)};
   padding-right: ${({ theme }) => em(theme.pulsar.size.closet, theme.pulsar.size.room)};
   font-size: ${({ theme }) => em(theme.pulsar.size.room)};

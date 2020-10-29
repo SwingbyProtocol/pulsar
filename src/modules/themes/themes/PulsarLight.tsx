@@ -18,7 +18,7 @@ export const PulsarLight = {
 
       border: {
         normal: '#d7dade',
-        danger: '#f7c5c3',
+        danger: '#ffc2c4',
       },
 
       primary: {
@@ -39,6 +39,13 @@ export const PulsarLight = {
       button: {
         primary: { idle: { text: '#fff' }, active: { text: '#fff' } },
         secondary: { idle: { text: '#31d5b8' }, active: { text: '#fff' } },
+      },
+
+      input: {
+        idle: {
+          bg: '#fff',
+          border: '#d7dade',
+        },
       },
     },
 

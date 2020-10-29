@@ -7,5 +7,25 @@ export const PulsarAccent: PulsarThemeType = {
 
     id: 'PulsarAccent',
     name: 'Pulsar (Accent)',
+
+    color: {
+      ...PulsarDark.pulsar.color,
+
+      bg: {
+        normal: '#1e293b',
+      },
+
+      border: {
+        normal: '#d7dade',
+        danger: '#fc012a',
+      },
+
+      input: {
+        idle: {
+          bg: '#2f3a4b',
+          border: 'transparent',
+        },
+      },
+    },
   },
 };
