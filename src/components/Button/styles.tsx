@@ -28,36 +28,36 @@ const city = css`
 
 const primary = css`
   background: ${({ theme }) => theme.pulsar.color.primary.normal};
-  color: ${({ theme }) => theme.pulsar.color.button.primary.active.text};
+  color: ${({ theme }) => theme.pulsar.components.button.primary.active.text};
 
   :hover,
   :active {
     background: ${({ theme }) => theme.pulsar.color.primary.active};
-    color: ${({ theme }) => theme.pulsar.color.button.primary.active.text};
+    color: ${({ theme }) => theme.pulsar.components.button.primary.active.text};
   }
 `;
 
 const secondaryDark = css`
   border: none;
   background: ${({ theme }) => theme.pulsar.color.text.normal};
-  color: ${({ theme }) => theme.pulsar.color.button.secondary.active.text};
+  color: ${({ theme }) => theme.pulsar.components.button.secondary.active.text};
 
   :hover,
   :active {
     background: ${({ theme }) => theme.pulsar.color.text.accent};
-    color: ${({ theme }) => theme.pulsar.color.button.secondary.active.text};
+    color: ${({ theme }) => theme.pulsar.components.button.secondary.active.text};
   }
 `;
 
 const secondary = css`
   border: 2px solid ${({ theme }) => theme.pulsar.color.primary.normal};
   background: transparent;
-  color: ${({ theme }) => theme.pulsar.color.button.secondary.idle.text};
+  color: ${({ theme }) => theme.pulsar.components.button.secondary.idle.text};
 
   :hover,
   :active {
     background: ${({ theme }) => theme.pulsar.color.primary.active};
-    color: ${({ theme }) => theme.pulsar.color.button.secondary.active.text};
+    color: ${({ theme }) => theme.pulsar.components.button.secondary.active.text};
     border-color: transparent;
   }
 

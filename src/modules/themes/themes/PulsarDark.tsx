@@ -27,7 +27,9 @@ export const PulsarDark: PulsarThemeType = {
         normal: '#d7dade',
         danger: '#fc012a',
       },
+    },
 
+    components: {
       button: {
         primary: { idle: { text: '#fff' }, active: { text: '#fff' } },
         secondary: { idle: { text: '#2b374a' }, active: { text: '#2b374a' } },

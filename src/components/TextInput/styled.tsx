@@ -46,7 +46,7 @@ const city = css`
 `;
 
 const normal = css`
-  border-color: ${({ theme }) => theme.pulsar.color.input.idle.border};
+  border-color: ${({ theme }) => theme.pulsar.components.input.idle.border};
 `;
 
 const danger = css`
@@ -62,7 +62,7 @@ export const InputContainer = styled.div<{ size: Size; state: State; isFocused: 
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background: ${({ theme }) => theme.pulsar.color.input.idle.bg};
+  background: ${({ theme }) => theme.pulsar.components.input.idle.bg};
   border: 2px solid transparent;
   color: ${({ theme }) => theme.pulsar.color.text.accent};
   overflow: hidden;

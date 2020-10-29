@@ -35,18 +35,6 @@ export const PulsarLight = {
         normal: '#d14c40',
         active: '#d14c40',
       },
-
-      button: {
-        primary: { idle: { text: '#fff' }, active: { text: '#fff' } },
-        secondary: { idle: { text: '#31d5b8' }, active: { text: '#fff' } },
-      },
-
-      input: {
-        idle: {
-          bg: '#fff',
-          border: '#d7dade',
-        },
-      },
     },
 
     size: {
@@ -64,6 +52,20 @@ export const PulsarLight = {
 
     duration: {
       normal: '150ms',
+    },
+
+    components: {
+      button: {
+        primary: { idle: { text: '#fff' }, active: { text: '#fff' } },
+        secondary: { idle: { text: '#31d5b8' }, active: { text: '#fff' } },
+      },
+
+      input: {
+        idle: {
+          bg: '#fff',
+          border: '#d7dade',
+        },
+      },
     },
   },
 };

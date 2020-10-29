@@ -19,6 +19,10 @@ export const PulsarAccent: PulsarThemeType = {
         normal: '#d7dade',
         danger: '#fc012a',
       },
+    },
+
+    components: {
+      ...PulsarDark.pulsar.components,
 
       input: {
         idle: {
