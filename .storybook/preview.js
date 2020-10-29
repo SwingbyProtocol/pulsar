@@ -1,8 +1,8 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import { PulsarGlobalStyles } from '../src/modules/global';
-import { pulsarDarkColors, pulsarLightColors } from '../src/modules/themes';
+import { PulsarThemeProvider } from '../src/modules/themes';
 
 export const parameters = {
   actions: { argTypesRegex: '^on.*' },
@@ -18,39 +18,38 @@ const Container = styled.div`
   font-size: 16px;
 `;
 
-const section = css`
-  background: var(--sbpulsar-color-bg-normal);
-  color: var(--sbpulsar-color-text-normal);
+const Section = styled.div`
+  background: ${({ theme }) => theme.pulsar.color.bg.normal};
+  color: ${({ theme }) => theme.pulsar.color.readable.normal(theme.pulsar.color.bg.normal)};
   padding: 1em;
   flex-grow: 1;
   flex-shrink: 0;
 `;
 
-const DarkSection = styled.div`
-  ${pulsarDarkColors};
-  ${section};
-`;
-
-const LightSection = styled.div`
-  ${pulsarLightColors};
-  ${section};
-`;
-
 export const decorators = [
   (Story) => (
-    <>
+    <PulsarThemeProvider>
       <PulsarGlobalStyles />
       <Story />
-    </>
+    </PulsarThemeProvider>
   ),
   (Story) => (
     <Container>
-      <LightSection>
-        <Story />
-      </LightSection>
-      <DarkSection>
-        <Story />
-      </DarkSection>
+      <PulsarThemeProvider theme="light">
+        <Section>
+          <Story />
+        </Section>
+      </PulsarThemeProvider>
+      <PulsarThemeProvider theme="dark">
+        <Section>
+          <Story />
+        </Section>
+      </PulsarThemeProvider>
+      <PulsarThemeProvider theme="accent">
+        <Section>
+          <Story />
+        </Section>
+      </PulsarThemeProvider>
     </Container>
   ),
 ];

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { useTheme } from 'styled-components';
 import { Meta } from '@storybook/react';
 
 import { SIZES } from './styles';

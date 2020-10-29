@@ -1,8 +1,6 @@
 import styled, { css } from 'styled-components';
 import { transitions, em } from 'polished';
 
-import { PulsarConstants } from '../../modules/themes/constants';
-
 export const SIZES = ['country', 'state', 'city'] as const;
 export type Size = typeof SIZES[number];
 
@@ -17,34 +15,34 @@ export const Container = styled.div`
 
 export const Label = styled.label`
   display: block;
-  font-size: ${em(PulsarConstants.size.room)};
+  font-size: ${({ theme }) => em(theme.pulsar.size.room)};
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
   font-weight: 500;
-  margin-bottom: ${em(PulsarConstants.size.drawer, PulsarConstants.size.room)};
+  margin-bottom: ${({ theme }) => em(theme.pulsar.size.drawer, theme.pulsar.size.room)};
 `;
 
 export const Description = styled.span`
   display: block;
   color: var(--sbpulsar-color-text-normals);
-  font-size: ${em(PulsarConstants.size.closet)};
-  margin-top: ${em(PulsarConstants.size.box, PulsarConstants.size.room)};
+  font-size: ${({ theme }) => em(theme.pulsar.size.closet)};
+  margin-top: ${({ theme }) => em(theme.pulsar.size.box, theme.pulsar.size.room)};
 `;
 
 const country = css`
-  border-radius: ${em(PulsarConstants.radius.normal)};
-  height: ${em(PulsarConstants.size.country)};
+  border-radius: ${({ theme }) => em(theme.pulsar.size.box)};
+  height: ${({ theme }) => em(theme.pulsar.size.country)};
 `;
 
 const state = css`
-  border-radius: ${em(PulsarConstants.radius.normal)};
-  height: ${em(PulsarConstants.size.state)};
+  border-radius: ${({ theme }) => em(theme.pulsar.size.box)};
+  height: ${({ theme }) => em(theme.pulsar.size.state)};
 `;
 
 const city = css`
-  border-radius: ${em(PulsarConstants.radius.normal)};
-  height: ${em(PulsarConstants.size.city)};
+  border-radius: ${({ theme }) => em(theme.pulsar.size.box)};
+  height: ${({ theme }) => em(theme.pulsar.size.city)};
 `;
 
 const normal = css`
@@ -68,12 +66,10 @@ export const InputContainer = styled.div<{ size: Size; state: State; isFocused: 
   border: 2px solid transparent;
   color: var(--sbpulsar-color-text-accent);
   overflow: hidden;
-  font-size: ${em(PulsarConstants.size.house)};
+  font-size: ${({ theme }) => em(theme.pulsar.size.house)};
 
-  ${transitions(
-    ['color', 'background', 'border'],
-    `${PulsarConstants.duration.normal} ease-in-out`,
-  )};
+  ${({ theme }) =>
+    transitions(['color', 'background', 'border'], `${theme.pulsar.duration.normal} ease-in-out`)};
 
   ${({ size }) => size === 'country' && country};
   ${({ size }) => size === 'state' && state};
@@ -95,11 +91,11 @@ export const Input = styled.input`
   text-decoration: none;
   background: transparent;
   color: inherit;
-  text-indent: ${em(PulsarConstants.size.closet, PulsarConstants.size.room)};
-  padding-right: ${em(PulsarConstants.size.closet, PulsarConstants.size.room)};
-  font-size: ${em(PulsarConstants.size.room)};
+  text-indent: ${({ theme }) => em(theme.pulsar.size.closet, theme.pulsar.size.room)};
+  padding-right: ${({ theme }) => em(theme.pulsar.size.closet, theme.pulsar.size.room)};
+  font-size: ${({ theme }) => em(theme.pulsar.size.room)};
   font-weight: 700;
-  ${transitions(['color'], `${PulsarConstants.duration.normal} ease-in-out`)};
+  ${({ theme }) => transitions(['color'], `${theme.pulsar.duration.normal} ease-in-out`)};
 
   ::placeholder {
     color: var(--sbpulsar-color-text-masked);
@@ -111,7 +107,7 @@ export const Left = styled.div`
   flex-direction: row;
   align-items: stretch;
   justify-content: stretch;
-  margin-left: ${em(PulsarConstants.size.room)};
+  margin-left: ${({ theme }) => em(theme.pulsar.size.room)};
 `;
 
 export const Right = styled.div`
@@ -119,5 +115,5 @@ export const Right = styled.div`
   flex-direction: row;
   align-items: stretch;
   justify-content: stretch;
-  margin-right: ${em(PulsarConstants.size.room)};
+  margin-right: ${({ theme }) => em(theme.pulsar.size.room)};
 `;
