@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { em, transitions } from 'polished';
 
-export const VARIANTS = ['primary', 'secondary'] as const;
+export const VARIANTS = ['primary', 'secondary', 'tertiary'] as const;
 export type Variant = typeof VARIANTS[number];
 
 export const SIZES = ['country', 'state', 'city'] as const;
@@ -28,25 +28,37 @@ const city = css`
 
 const primary = css`
   background: ${({ theme }) => theme.pulsar.color.primary.normal};
-  color: ${({ theme }) => theme.pulsar.components.button.primary.active.text};
+  color: ${({ theme }) => theme.pulsar.color.primary.text};
 
   :hover,
   :active {
     background: ${({ theme }) => theme.pulsar.color.primary.active};
-    color: ${({ theme }) => theme.pulsar.components.button.primary.active.text};
+    color: ${({ theme }) => theme.pulsar.color.primary.text};
   }
 `;
 
 const secondary = css`
-  border: 2px solid ${({ theme }) => theme.pulsar.components.button.secondary.idle.border};
-  background: ${({ theme }) => theme.pulsar.components.button.secondary.idle.bg};
-  color: ${({ theme }) => theme.pulsar.components.button.secondary.idle.text};
+  border: none;
+  background: ${({ theme }) => theme.pulsar.color.text.normal};
+  color: ${({ theme }) => theme.pulsar.color.bg.normal};
 
   :hover,
   :active {
-    background: ${({ theme }) => theme.pulsar.components.button.secondary.active.bg};
-    color: ${({ theme }) => theme.pulsar.components.button.secondary.active.text};
-    border-color: ${({ theme }) => theme.pulsar.components.button.secondary.active.border};
+    background: ${({ theme }) => theme.pulsar.color.text.masked};
+    color: ${({ theme }) => theme.pulsar.color.bg.normal};
+  }
+`;
+
+const tertiary = css`
+  border: 2px solid ${({ theme }) => theme.pulsar.color.primary.normal};
+  background: transparent;
+  color: ${({ theme }) => theme.pulsar.color.primary.normal};
+
+  :hover,
+  :active {
+    background: ${({ theme }) => theme.pulsar.color.primary.active};
+    color: ${({ theme }) => theme.pulsar.color.primary.text};
+    border-color: transparent;
   }
 `;
 
@@ -70,6 +82,7 @@ export const StyledButton = styled.button<{ size: Size; variant: Variant }>`
 
   ${({ variant }) => variant === 'primary' && primary};
   ${({ variant }) => variant === 'secondary' && secondary};
+  ${({ variant }) => variant === 'tertiary' && tertiary};
 `;
 
 const shadowPrimary = css`
@@ -77,7 +90,11 @@ const shadowPrimary = css`
 `;
 
 const shadowSecondary = css`
-  color: ${({ theme }) => theme.pulsar.components.button.secondary.active.bg};
+  color: ${({ theme }) => theme.pulsar.color.text.normal};
+`;
+
+const shadowTertiary = css`
+  color: ${({ theme }) => theme.pulsar.color.primary.active};
 `;
 
 export const Shadow = styled.div<{ variant: Variant }>`
@@ -93,4 +110,5 @@ export const Shadow = styled.div<{ variant: Variant }>`
 
   ${({ variant }) => variant === 'primary' && shadowPrimary};
   ${({ variant }) => variant === 'secondary' && shadowSecondary};
+  ${({ variant }) => variant === 'tertiary' && shadowTertiary};
 `;
