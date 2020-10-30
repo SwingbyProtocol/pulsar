@@ -31,14 +31,6 @@ export const PulsarDark: PulsarThemeType = {
     },
 
     components: {
-      button: {
-        primary: { idle: { text: '#fff' }, active: { text: '#fff' } },
-        secondary: {
-          idle: { text: '#2b374a', border: 'tranparent', bg: '#fff' },
-          active: { text: '#2b374a', border: 'transparent', bg: '#f2f2f2' },
-        },
-      },
-
       input: {
         idle: {
           bg: '#1c232f',
