@@ -40,7 +40,7 @@ export const useSystemTheme = ({
     } else {
       setTheme('light');
     }
-  }, [theme]);
+  }, []);
 
   return theme;
 };
