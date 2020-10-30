@@ -92,6 +92,7 @@ export const Input = styled.input`
   background: transparent;
   color: inherit;
   height: 100%;
+  width: 100%;
   text-indent: ${({ theme }) => em(theme.pulsar.size.closet, theme.pulsar.size.room)};
   padding-right: ${({ theme }) => em(theme.pulsar.size.closet, theme.pulsar.size.room)};
   font-size: ${({ theme }) => em(theme.pulsar.size.room)};
