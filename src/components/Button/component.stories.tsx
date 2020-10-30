@@ -33,6 +33,16 @@ export const Secondary = () => (
   </Container>
 );
 
+export const Tertiary = () => (
+  <Container>
+    {SIZES.map((size) => (
+      <Button variant="tertiary" size={size} key={size}>
+        A button (size={size})
+      </Button>
+    ))}
+  </Container>
+);
+
 const Container = styled.div`
   > *:not(:last-child) {
     margin-bottom: 1em;
