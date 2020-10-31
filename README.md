@@ -7,16 +7,17 @@ Pulsar is a library of [React](https://reactjs.org/) components built with
 
 1. Install this library as a dependency with `yarn add @swingby-protocol/pulsar@alpha`.
 
-2. Use `<PulsarThemeProvider />` with no parameters at the root of your app so that you get
-   automatic theme switching out of the box.
+2. Use `<PulsarThemeProvider />` with no props at the root of your app so that you get automatic
+   theme switching out of the box. Optionally, you may also use `<PulsarGlobalStyles />`.
 
    ```tsx
    import React from 'react';
-   import { PulsarThemeProvider, Button } from '@swingby-protocol/pulsar';
+   import { PulsarThemeProvider, Button, PulsarGlobalStyles } from '@swingby-protocol/pulsar';
 
    export const MyApp = () => {
      return (
        <PulsarThemeProvider>
+         <PulsarGlobalStyles /> {/* Optional */}
          <h1>My cool app</h1>
          <Button variant="primary" size="country">
            Click here!
