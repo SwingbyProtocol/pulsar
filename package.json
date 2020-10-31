@@ -75,11 +75,13 @@
   },
   "dependencies": {
     "@types/styled-components": "^5.1.4",
+    "nanoid": "^3.1.16",
     "polished": "^4.0.3",
     "react-spring": "^8.0.27",
     "styled-components": "^5.2.0"
   },
   "resolutions": {
-    "**/@typescript-eslint/eslint-plugin": "4.6.0"
+    "**/@typescript-eslint/eslint-plugin": "4.6.0",
+    "**/nanoid": "3.1.16"
   }
 }
