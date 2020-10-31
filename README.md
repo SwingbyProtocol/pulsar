@@ -5,7 +5,7 @@ Pulsar is a library of [React](https://reactjs.org/) components built with
 
 ## Getting started
 
-1. Install this library as a dependency with `yarn add @swingby-protocol/pulsar`.
+1. Install this library as a dependency with `yarn add @swingby-protocol/pulsar@alpha`.
 
 2. Use `<PulsarThemeProvider />` with no parameters at the root of your app so that you get
    automatic theme switching out of the box.
