@@ -12,7 +12,7 @@ Pulsar is a library of [React](https://reactjs.org/) components built with
 
    ```tsx
    import React from 'react';
-   import { PulsarThemeProvider, Button } from '@swingby-protocols/pulsar';
+   import { PulsarThemeProvider, Button } from '@swingby-protocol/pulsar';
 
    export const MyApp = () => {
      return (
