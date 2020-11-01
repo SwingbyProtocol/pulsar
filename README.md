@@ -37,7 +37,7 @@ Add a definitions file like the following anywhere in your project.
 ```tsx
 // DefaultTheme.d.ts
 import 'styled-components';
-import { PulsarThemeProvider } from '@swingby-protocols/pulsar';
+import { PulsarThemeProvider } from '@swingby-protocol/pulsar';
 
 declare module 'styled-components' {
   export interface DefaultTheme extends PulsarThemeProvider {}
