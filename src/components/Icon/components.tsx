@@ -1,3 +1,5 @@
+/* eslint-disable import/no-internal-modules */
+
 export { ReactComponent as ArrowDown } from './assets/ArrowDown.svg';
 export { ReactComponent as ArrowLeft } from './assets/ArrowLeft.svg';
 export { ReactComponent as ArrowRight } from './assets/ArrowRight.svg';
