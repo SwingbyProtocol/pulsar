@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react';
 import { ThemeProvider as Provider, DefaultTheme } from 'styled-components';
 
-import { PulsarAccent } from '../themes/PulsarAccent';
-import { PulsarDark } from '../themes/PulsarDark';
-import { PulsarLight } from '../themes/PulsarLight';
+import { PulsarAccent } from '../PulsarAccent';
+import { PulsarDark } from '../PulsarDark';
+import { PulsarLight } from '../PulsarLight';
 import { useSystemTheme } from '../useSystemTheme';
 
 export type Theme = 'light' | 'dark' | 'accent';
