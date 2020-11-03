@@ -8,6 +8,7 @@ export { ReactComponent as CaretDown } from './assets/CaretDown.svg';
 export { ReactComponent as CaretLeft } from './assets/CaretLeft.svg';
 export { ReactComponent as CaretRight } from './assets/CaretRight.svg';
 export { ReactComponent as CaretUp } from './assets/CaretUp.svg';
+export { ReactComponent as Ellipsis } from './assets/Ellipsis.svg';
 export { ReactComponent as ExternalLink } from './assets/ExternalLink.svg';
 export { ReactComponent as Facebook } from './assets/Facebook.svg';
 export { ReactComponent as Filter } from './assets/Filter.svg';
