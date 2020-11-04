@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Logo } from './';
+import { logos } from '.';
 
 export default {
-  title: 'Logo',
+  title: 'Logos',
 };
 
 const Container = styled.div`
@@ -24,8 +24,8 @@ const Img = styled.img`
 
 export const Default = () => (
   <Container>
-    {Object.keys(Logo).map((name) => {
-      const url = Logo[name as keyof typeof Logo];
+    {Object.keys(logos).map((name) => {
+      const url = logos[name as keyof typeof logos];
       return (
         <Wrapper key={name}>
           <Img src={url} />

@@ -1,0 +1,10 @@
+/* eslint-disable import/no-internal-modules */
+
+export { default as CoinBnb } from './assets/CoinBnb.svg';
+export { default as CoinBtc } from './assets/CoinBtc.svg';
+export { default as CoinBtcb } from './assets/CoinBtcb.svg';
+export { default as CoinBtce } from './assets/CoinBtce.svg';
+export { default as CoinRenbtc } from './assets/CoinRenbtc.svg';
+export { default as CoinWbtc } from './assets/CoinWbtc.svg';
+export { default as Swingby } from './assets/Swingby.svg';
+export { default as SwingbyFlat } from './assets/SwingbyFlat.svg';
