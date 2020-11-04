@@ -6,6 +6,7 @@ import { defaultTarget } from '../../../modules/target';
 
 export const StyledDefaultTarget = styled.button`
   ${defaultTarget};
+  font-weight: 700;
 `;
 
 export const Container = styled.div`

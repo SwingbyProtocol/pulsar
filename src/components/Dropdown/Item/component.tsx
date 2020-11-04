@@ -8,7 +8,7 @@ import { StyledListItem } from './styled';
 
 export type Props = Omit<React.ComponentPropsWithoutRef<typeof ListItem>, 'showBorder'> & Testable;
 
-export const Component = ({ children, onClick, ...otherProps }: Props) => {
+export const Component = ({ children, interactive = true, onClick, ...otherProps }: Props) => {
   const { testId: parentTestId } = useContext(ContentContext);
   const buildTestId = useBuildTestId({
     parent: otherProps['data-testid'] ? parentTestId : undefined,
@@ -31,6 +31,7 @@ export const Component = ({ children, onClick, ...otherProps }: Props) => {
   return (
     <StyledListItem
       {...otherProps}
+      interactive={interactive}
       onClick={click}
       data-testid={buildTestId(otherProps['data-testid'])}
     >
