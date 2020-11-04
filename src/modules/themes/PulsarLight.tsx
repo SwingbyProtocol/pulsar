@@ -56,6 +56,10 @@ export const PulsarLight = {
       normal: '150ms',
     },
 
+    shadow: {
+      tooltip: '0px 20px 25px rgba(43, 55, 74, 0.5);',
+    },
+
     components: {
       input: {
         idle: {

@@ -30,6 +30,10 @@ export const PulsarDark: PulsarThemeType = {
       },
     },
 
+    shadow: {
+      tooltip: '0px 20px 25px rgba(0, 0, 0, 0.503715);',
+    },
+
     components: {
       input: {
         idle: {
