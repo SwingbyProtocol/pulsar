@@ -1,1 +1,7 @@
-export { Component as Tooltip } from './component';
+import { Component } from './component';
+import { Content, ContentContainer } from './styled';
+
+export const Tooltip = Component as typeof Component & {
+  ContentContainer: typeof ContentContainer;
+  Content: typeof Content;
+};

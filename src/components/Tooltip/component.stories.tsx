@@ -2,8 +2,6 @@ import { Meta } from '@storybook/react';
 import React from 'react';
 
 import { PulsarThemeProvider } from '../../modules/themes';
-import { Button } from '../Button';
-import { Icon } from '../Icon';
 
 import { Tooltip } from './';
 
