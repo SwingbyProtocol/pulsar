@@ -3,14 +3,13 @@ import Tippy from '@tippyjs/react';
 
 import { Testable, useBuildTestId } from '../../modules/testing';
 
-import { Styles, ContentContainer, Size, Variant } from './styled';
+import { Styles, ContentContainer } from './styled';
 
-export type TriggerValue = 'mouseenter' | 'click' | 'manual';
+export type TriggerValue = 'mouseenter' | 'focus' | 'click' | 'manual';
 
 export type Props = Pick<React.HTMLProps<HTMLElement>, 'children' | 'style'> &
   Pick<
     React.ComponentProps<typeof Tippy>,
-    | 'arrow'
     | 'className'
     | 'onShow'
     | 'onHide'
@@ -24,29 +23,26 @@ export type Props = Pick<React.HTMLProps<HTMLElement>, 'children' | 'style'> &
   > &
   Testable & {
     content: React.ReactNode;
-    trigger: TriggerValue | TriggerValue[] | null;
-    radius?: Size;
-    variant?: Variant;
+    trigger?: TriggerValue | TriggerValue[];
   };
 
 export const Component = ({
   className,
-  radius,
-  variant = 'normal',
+  trigger: triggerProp = ['mouseenter', 'focus'],
   'data-testid': testId,
   ...otherProps
 }: Props) => {
   const buildTestId = useBuildTestId({ parent: testId });
 
   const trigger = useMemo(() => {
-    if (!otherProps.trigger) return undefined;
-    if (!Array.isArray(otherProps.trigger)) return otherProps.trigger;
-    return otherProps.trigger.join(' ');
-  }, [otherProps.trigger]);
+    if (!triggerProp) return undefined;
+    if (!Array.isArray(triggerProp)) return triggerProp;
+    return triggerProp.join(' ');
+  }, [triggerProp]);
 
   return (
     <>
-      <Styles variant={variant} />
+      <Styles />
       <Tippy
         {...otherProps}
         trigger={trigger}
@@ -55,7 +51,7 @@ export const Component = ({
         animation="shift-away"
         placement={otherProps.placement ?? 'bottom-start'}
         content={
-          <ContentContainer radius={radius} variant={variant} data-testid={buildTestId('content')}>
+          <ContentContainer data-testid={buildTestId('content')}>
             {otherProps.content}
           </ContentContainer>
         }
@@ -69,7 +65,3 @@ export const Component = ({
 };
 
 Component.displayName = 'Tooltip';
-Component.defaultProps = {
-  trigger: ['mouseenter', 'focus'],
-  className: '',
-} as Props;

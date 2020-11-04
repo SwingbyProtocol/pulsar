@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle, css } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { em } from 'polished';
 
 /* eslint-disable import/no-internal-modules */

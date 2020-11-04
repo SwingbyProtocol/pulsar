@@ -42,38 +42,3 @@ export const MixedThemes = () => {
     </>
   );
 };
-
-export const DefaultTarget = () => {
-  const tooltip = (target: React.ReactNode) => {
-    return (
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <Tooltip
-          content={<Tooltip.Content padding="small">Some tooltip content...</Tooltip.Content>}
-          placement="bottom"
-          arrow={true}
-          radius="micro"
-          variant="accent"
-          visible
-        >
-          {target}
-        </Tooltip>
-      </div>
-    );
-  };
-
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
-      {tooltip(
-        <Button variant="secondary" shape="square" size="city">
-          <Icon.ArrowUp />
-        </Button>,
-      )}
-      {tooltip(
-        <Tooltip.DefaultTarget>
-          <Icon.Search />
-        </Tooltip.DefaultTarget>,
-      )}
-      {tooltip(<Tooltip.DefaultTarget>Tooltip</Tooltip.DefaultTarget>)}
-    </div>
-  );
-};
