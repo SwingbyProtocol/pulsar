@@ -44,8 +44,8 @@ export const Component = ({
       {right && <Right data-testid={buildTestId('right')}>{right}</Right>}
       {selected && (
         <Fixed>
-          <Icon.SwapHorizontal
-            fontSize={theme.pulsar.size.closet}
+          <Icon.Tick
+            fontSize={theme.pulsar.size.drawer}
             color={theme.pulsar.color.primary.normal}
             data-testid={buildTestId('tick')}
           />

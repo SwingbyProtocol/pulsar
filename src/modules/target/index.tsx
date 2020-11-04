@@ -3,7 +3,7 @@ import { transitions, em } from 'polished';
 
 import { reset } from '../reset';
 
-export const DefaultTarget = css`
+export const defaultTarget = css`
   ${reset};
 
   width: 100%;
