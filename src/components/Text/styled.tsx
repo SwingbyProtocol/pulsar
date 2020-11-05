@@ -1,6 +1,8 @@
 import { em } from 'polished';
 import styled, { css } from 'styled-components';
 
+import { reset } from '../../modules/reset';
+
 export const VARIANTS = [
   'title-xl',
   'title-l',
@@ -109,6 +111,8 @@ const underline = css`
 `;
 
 export const StyledText = styled.span<{ variant?: Variant; decoration?: Decoration }>`
+  margin: 0;
+  padding: 0;
   text-decoration-color: ${({ theme }) => theme.pulsar.color.primary.normal};
 
   ${({ variant }) => variant === 'normal' && normal};
@@ -125,7 +129,7 @@ export const StyledText = styled.span<{ variant?: Variant; decoration?: Decorati
 
   ${({ decoration }) => decoration === 'underline' && underline};
 
-  > u {
+  u {
     ${underline};
   }
 `;
