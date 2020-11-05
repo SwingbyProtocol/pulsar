@@ -21,7 +21,7 @@ export const PulsarTestIdProvider = ({
 
 const genericBuildTestId = ({ parent, id }: { parent?: string; id?: string }) => {
   if (!parent && !id) return undefined;
-  if (!parent) return id;
+  if (!parent || id?.startsWith(parent)) return id;
   if (!id) return parent;
   return `${parent}.${id}`;
 };
