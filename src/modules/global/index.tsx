@@ -1,11 +1,13 @@
 import { createGlobalStyle as css } from 'styled-components';
 
 export const PulsarGlobalStyles = css`
+  @import url('https://rsms.me/inter/inter.css');
+
   :root {
     box-sizing: border-box;
     background: ${({ theme }) => theme.pulsar.color.bg.normal};
     color: ${({ theme }) => theme.pulsar.color.text.normal};
-    font-family: -apple-system, '.SFNSText-Regular', 'San Francisco', BlinkMacSystemFont,
+    font-family: 'Inter', -apple-system, '.SFNSText-Regular', 'San Francisco', BlinkMacSystemFont,
       '.PingFang-SC-Regular', 'Microsoft YaHei', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial,
       sans-serif;
   }
