@@ -7,5 +7,6 @@ export { Button } from './components/Button';
 export { Dropdown } from './components/Dropdown';
 export { Icon } from './components/Icon';
 export { ListItem } from './components/ListItem';
+export { Text } from './components/Text';
 export { TextInput } from './components/TextInput';
 export { Tooltip } from './components/Tooltip';
