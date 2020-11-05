@@ -8,11 +8,15 @@ import { StyledListItem } from './styled';
 
 export type Props = Omit<React.ComponentPropsWithoutRef<typeof ListItem>, 'showBorder'> & Testable;
 
-export const Component = ({ children, interactive = true, onClick, ...otherProps }: Props) => {
+export const Component = ({
+  children,
+  'data-testid': testId,
+  interactive = true,
+  onClick,
+  ...otherProps
+}: Props) => {
   const { testId: parentTestId } = useContext(ContentContext);
-  const buildTestId = useBuildTestId({
-    parent: otherProps['data-testid'] ? parentTestId : undefined,
-  });
+  const { buildTestId } = useBuildTestId({ id: testId ? parentTestId : undefined });
   const { onClose } = useContext(Context);
 
   const click = useCallback<NonNullable<Props['onClick']>>(
@@ -33,7 +37,7 @@ export const Component = ({ children, interactive = true, onClick, ...otherProps
       {...otherProps}
       interactive={interactive}
       onClick={click}
-      data-testid={buildTestId(otherProps['data-testid'])}
+      data-testid={buildTestId(testId ?? '')}
     >
       {children}
     </StyledListItem>

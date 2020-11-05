@@ -32,7 +32,7 @@ export const Component = ({
   'data-testid': testId,
   ...otherProps
 }: Props) => {
-  const buildTestId = useBuildTestId({ parent: testId });
+  const { buildTestId } = useBuildTestId({ id: testId });
 
   const trigger = useMemo(() => {
     if (!triggerProp) return undefined;

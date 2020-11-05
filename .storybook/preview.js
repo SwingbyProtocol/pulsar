@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { PulsarGlobalStyles } from '../src/modules/global';
 import { PulsarThemeProvider } from '../src/modules/themes';
+import { PulsarTestIdProvider } from '../src/modules/testing';
 
 export const parameters = {
   actions: { argTypesRegex: '^on.*' },
@@ -31,17 +32,23 @@ export const decorators = [
     <Container>
       <PulsarThemeProvider theme="light">
         <Section>
-          <Story />
+          <PulsarTestIdProvider value="light">
+            <Story />
+          </PulsarTestIdProvider>
         </Section>
       </PulsarThemeProvider>
       <PulsarThemeProvider theme="dark">
         <Section>
-          <Story />
+          <PulsarTestIdProvider value="dark">
+            <Story />
+          </PulsarTestIdProvider>
         </Section>
       </PulsarThemeProvider>
       <PulsarThemeProvider theme="accent">
         <Section>
-          <Story />
+          <PulsarTestIdProvider value="accent">
+            <Story />
+          </PulsarTestIdProvider>
         </Section>
       </PulsarThemeProvider>
     </Container>
