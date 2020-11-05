@@ -2,6 +2,7 @@ export { PulsarTheme, PulsarThemeProvider, PulsarThemeType } from './modules/the
 export { PulsarGlobalStyles } from './modules/global';
 export { logos } from './modules/logos';
 
+export { AppLogo } from './components/AppLogo';
 export { Button } from './components/Button';
 export { Dropdown } from './components/Dropdown';
 export { Icon } from './components/Icon';
