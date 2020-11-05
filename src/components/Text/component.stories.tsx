@@ -18,9 +18,9 @@ export const Default = () => (
     {VARIANTS.map((variant) => (
       <Item>
         <Text variant={variant} key={variant}>
-          When <u>Mr. Bilbo Baggins of Bag End</u> announced that he would shortly be celebrating
-          his eleventy-first birthday with a party of special magnificence, there was much talk and
-          excitement in Hobbiton.
+          When <Text decoration="underline">Mr. Bilbo Baggins of Bag End</Text> announced that he
+          would shortly be celebrating his eleventy-first birthday with a party of special
+          magnificence, there was much talk and excitement in <u>Hobbiton</u>.
         </Text>
       </Item>
     ))}
