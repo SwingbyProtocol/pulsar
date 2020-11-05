@@ -21,7 +21,7 @@ export const Component = ({
   ...otherProps
 }: Props) => {
   const [isShowing, setIsShowing] = useState(false);
-  const buildTestId = useBuildTestId({ parent: testId });
+  const { buildTestId } = useBuildTestId({ id: testId });
 
   const toggle = useCallback(() => {
     setIsShowing((value) => !value);
@@ -40,7 +40,7 @@ export const Component = ({
             <TooltipContent>{children}</TooltipContent>
           </ContentContext.Provider>
         }
-        data-testid={buildTestId()}
+        data-testid={buildTestId('')}
         onClickOutside={toggle}
       >
         <TargetContainer onClick={toggle}>{target}</TargetContainer>

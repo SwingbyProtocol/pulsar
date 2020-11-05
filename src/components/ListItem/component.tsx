@@ -26,7 +26,7 @@ export const Component = ({
   'data-testid': testId,
   ...otherProps
 }: Props) => {
-  const buildTestId = useBuildTestId({ parent: testId });
+  const { buildTestId } = useBuildTestId({ id: testId });
   const theme = useTheme();
 
   return (
@@ -35,7 +35,7 @@ export const Component = ({
       as={htmlTag as 'button'}
       disabled={disabled}
       interactive={interactive}
-      data-testid={buildTestId()}
+      data-testid={buildTestId('')}
     >
       {left && <Left data-testid={buildTestId('left')}>{left}</Left>}
       <ContentContainer data-testid={buildTestId('content')}>

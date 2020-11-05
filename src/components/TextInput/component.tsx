@@ -43,7 +43,7 @@ export const Component = ({
   id: idProp,
   ...props
 }: Props) => {
-  const buildTestId = useBuildTestId({ parent: testId });
+  const { buildTestId } = useBuildTestId({ id: testId });
   const id = useMemo(() => idProp || `id-${nanoid()}`, [idProp]);
   const [isFocused, setFocused] = useState(false);
 
