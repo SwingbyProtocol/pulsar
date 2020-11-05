@@ -1,8 +1,6 @@
 import { em } from 'polished';
 import styled, { css } from 'styled-components';
 
-import { reset } from '../../modules/reset';
-
 export const VARIANTS = [
   'title-xl',
   'title-l',
