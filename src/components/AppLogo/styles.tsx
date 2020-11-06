@@ -15,7 +15,8 @@ export const AppLogoContainer = styled.div`
 `;
 
 export const AppLogoText = styled.span`
-  margin-left: ${({ theme }) => em(theme.pulsar.size.drawer)};
+  margin-left: ${({ theme }) => em(theme.pulsar.size.drawer, 13)};
+  font-size: ${em(13)};
   font-weight: 600;
   color: ${({ theme }) => theme.pulsar.color.primary.normal};
 `;
