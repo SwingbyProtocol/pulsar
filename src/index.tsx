@@ -8,6 +8,7 @@ export { Card } from './components/Card';
 export { Dropdown } from './components/Dropdown';
 export { Icon } from './components/Icon';
 export { ListItem } from './components/ListItem';
+export { StatusIcon } from './components/StatusIcon';
 export { Text } from './components/Text';
 export { TextInput } from './components/TextInput';
 export { Tooltip } from './components/Tooltip';
