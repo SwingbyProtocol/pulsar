@@ -48,11 +48,11 @@
     "@percy/cypress": "^2.3.2",
     "@rollup/plugin-url": "^5.0.1",
     "@size-limit/preset-small-lib": "^4.7.0",
-    "@storybook/addon-essentials": "^6.0.26",
+    "@storybook/addon-essentials": "^6.0.28",
     "@storybook/addon-info": "^5.3.21",
-    "@storybook/addon-links": "^6.0.26",
-    "@storybook/addons": "^6.0.26",
-    "@storybook/react": "^6.0.26",
+    "@storybook/addon-links": "^6.0.28",
+    "@storybook/addons": "^6.0.28",
+    "@storybook/react": "^6.0.28",
     "@svgr/rollup": "^5.4.0",
     "@svgr/webpack": "^5.4.0",
     "@swingby-protocol/eslint-config": "^1.2.0",
@@ -84,7 +84,8 @@
     "styled-components": "^5.2.1"
   },
   "resolutions": {
-    "**/@typescript-eslint/eslint-plugin": "4.6.0",
+    "**/react": "17.0.1",
+    "**/@typescript-eslint/eslint-plugin": "4.6.1",
     "**/nanoid": "3.1.16"
   }
 }
