@@ -1,6 +1,7 @@
 export { PulsarTheme, PulsarThemeProvider, PulsarThemeType } from './modules/themes';
 export { PulsarGlobalStyles } from './modules/global';
 export { logos } from './modules/logos';
+export { formatCryptoAsset, formatFiatAsset } from './modules/intl';
 
 export { AppLogo } from './components/AppLogo';
 export { Button } from './components/Button';
