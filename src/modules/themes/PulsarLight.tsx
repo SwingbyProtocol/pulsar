@@ -28,6 +28,12 @@ export const PulsarLight = {
         text: '#fff',
       },
 
+      secondary: {
+        normal: '#3799da',
+        active: '#297cb3',
+        text: '#fff',
+      },
+
       success: {
         normal: '#31d5b8',
         active: '#21a68e',
