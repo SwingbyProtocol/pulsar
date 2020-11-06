@@ -31,6 +31,7 @@ export const PulsarDark: PulsarThemeType = {
     },
 
     shadow: {
+      ...PulsarLight.pulsar.shadow,
       tooltip: '0px 20px 25px rgba(0, 0, 0, 0.503715);',
     },
 
