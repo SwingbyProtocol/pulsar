@@ -40,15 +40,25 @@ export const PulsarLight = {
     },
 
     size: {
+      /** `4px` */
       box: 4,
+      /** `8px` */
       drawer: 8,
+      /** `12px` */
       closet: 12,
+      /** `14px` */
       room: 14,
+      /** `16px` */
       house: 16,
+      /** `24px` */
       street: 24,
+      /** `32px` */
       town: 32,
+      /** `40px` */
       city: 40,
+      /** `48px` */
       state: 48,
+      /** `56px` */
       country: 56,
     },
 
@@ -58,6 +68,7 @@ export const PulsarLight = {
 
     shadow: {
       tooltip: '0px 20px 25px rgba(43, 55, 74, 0.5);',
+      card: '0px 15px 25px -10px rgba(43, 55, 74, 0.152644)',
     },
 
     components: {

@@ -4,6 +4,7 @@ export { logos } from './modules/logos';
 
 export { AppLogo } from './components/AppLogo';
 export { Button } from './components/Button';
+export { Card } from './components/Card';
 export { Dropdown } from './components/Dropdown';
 export { Icon } from './components/Icon';
 export { ListItem } from './components/ListItem';
