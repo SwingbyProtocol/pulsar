@@ -2,6 +2,10 @@ import React from 'react';
 import { Meta } from '@storybook/react';
 import styled from 'styled-components';
 
+import { Button } from '../Button';
+
+import { SIZES } from './styles';
+
 import { Card } from './';
 
 const meta: Meta = {
@@ -13,22 +17,18 @@ export default meta;
 
 export const Default = () => (
   <>
-    <Item>
-      <Card size="city">
-        <Content>A card!</Content>
-      </Card>
-    </Item>
-    <Item>
-      <Card size="town">
-        <Content>A card!</Content>
-      </Card>
-    </Item>
+    {SIZES.map((size) => (
+      <Item>
+        <Card size={size} key={size}>
+          A card!
+          <Button variant="primary" size="country">
+            With a button
+          </Button>
+        </Card>
+      </Item>
+    ))}
   </>
 );
-
-const Content = styled.div`
-  border: 1px solid red;
-`;
 
 const Item = styled.div`
   :not(:last-child) {
