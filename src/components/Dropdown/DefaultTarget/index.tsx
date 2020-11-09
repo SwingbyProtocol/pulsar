@@ -3,15 +3,19 @@ import React, { useContext } from 'react';
 import { Context } from '../context';
 import { Icon } from '../../Icon';
 
-import { StyledDefaultTarget, Container, IconContainer } from './styled';
+import { StyledDefaultTarget, Container, IconContainer, Variant } from './styled';
 
-export const DefaultTarget = (
-  props: React.ButtonHTMLAttributes<HTMLButtonElement> & { children: React.ReactNode },
-) => {
+export const DefaultTarget = ({
+  variant = 'transparent',
+  ...props
+}: React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  children: React.ReactNode;
+  variant?: Variant;
+}) => {
   const { isShowing } = useContext(Context);
 
   return (
-    <StyledDefaultTarget {...props} as="button">
+    <StyledDefaultTarget {...props} variant={variant} isShowing={isShowing} as="button">
       <Container>{props.children}</Container>
       <IconContainer>{isShowing ? <Icon.CaretUp /> : <Icon.CaretDown />}</IconContainer>
     </StyledDefaultTarget>

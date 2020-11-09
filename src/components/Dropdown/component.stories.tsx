@@ -1,5 +1,6 @@
 import { Meta } from '@storybook/react';
 import React from 'react';
+import styled from 'styled-components';
 
 import { Dropdown } from './';
 
@@ -15,11 +16,8 @@ export const Bare = () => {
 };
 
 export const WithHelpers = () => {
-  return (
-    <Dropdown
-      target={<Dropdown.DefaultTarget>Click here!</Dropdown.DefaultTarget>}
-      data-testid="dropdown"
-    >
+  const content = (
+    <>
       <Dropdown.Item>Item 1</Dropdown.Item>
       <Dropdown.Item htmlTag="a">Item 2</Dropdown.Item>
       <Dropdown.Divider />
@@ -30,6 +28,35 @@ export const WithHelpers = () => {
       <Dropdown.Item disabled>Disabled accent item</Dropdown.Item>
       <Dropdown.Divider />
       <Dropdown.Item interactive={false}>Non-interactive item</Dropdown.Item>
-    </Dropdown>
+    </>
+  );
+
+  return (
+    <Container>
+      <Dropdown
+        target={<Dropdown.DefaultTarget>Click here!</Dropdown.DefaultTarget>}
+        data-testid="dropdown"
+      >
+        {content}
+      </Dropdown>
+      <Dropdown
+        target={<Dropdown.DefaultTarget variant="input">Click here!</Dropdown.DefaultTarget>}
+        data-testid="dropdown-input1"
+      >
+        {content}
+      </Dropdown>
+      <Dropdown
+        target={<Dropdown.DefaultTarget variant="input">Click here!</Dropdown.DefaultTarget>}
+        data-testid="dropdown-input2"
+      >
+        {content}
+      </Dropdown>
+    </Container>
   );
 };
+
+const Container = styled.div`
+  > *:not(:last-child) {
+    margin-bottom: 1em;
+  }
+`;
