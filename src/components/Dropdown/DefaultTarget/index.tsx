@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { Context } from '../context';
 import { Icon } from '../../Icon';
 
-import { StyledDefaultTarget, Container, IconContainer, Variant } from './styled';
+import { StyledDefaultTarget, Container, IconContainer, Variant, Size } from './styled';
 
 export const DefaultTarget = ({
   variant = 'transparent',
@@ -11,6 +11,7 @@ export const DefaultTarget = ({
 }: React.ButtonHTMLAttributes<HTMLButtonElement> & {
   children: React.ReactNode;
   variant?: Variant;
+  size: Size;
 }) => {
   const { isShowing } = useContext(Context);
 

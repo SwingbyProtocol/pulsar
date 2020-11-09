@@ -7,6 +7,9 @@ import { defaultTarget } from '../../../modules/target';
 export const VARIANTS = ['transparent', 'input'] as const;
 export type Variant = typeof VARIANTS[number];
 
+export const SIZES = ['country', 'state', 'city'] as const;
+export type Size = typeof SIZES[number];
+
 const inputShowing = css<{ isShowing: boolean }>`
   border-color: ${({ theme }) => theme.pulsar.color.primary.active};
 `;
@@ -17,12 +20,32 @@ const input = css<{ isShowing: boolean }>`
   ${({ isShowing }) => isShowing && inputShowing};
 `;
 
-export const StyledDefaultTarget = styled.button<{ variant: Variant; isShowing: boolean }>`
+const country = css`
+  height: ${({ theme }) => em(theme.pulsar.size.country, theme.pulsar.size.room)};
+`;
+
+const state = css`
+  height: ${({ theme }) => em(theme.pulsar.size.state, theme.pulsar.size.room)};
+`;
+
+const city = css`
+  height: ${({ theme }) => em(theme.pulsar.size.city, theme.pulsar.size.room)};
+`;
+
+export const StyledDefaultTarget = styled.button<{
+  variant: Variant;
+  isShowing: boolean;
+  size: Size;
+}>`
   ${defaultTarget};
   font-weight: 700;
   ${({ theme }) => transitions(['background', 'color', 'border'], theme.pulsar.duration.normal)};
 
-  ${({ variant }) => variant === 'input' && input}
+  ${({ variant }) => variant === 'input' && input};
+
+  ${({ size }) => size === 'country' && country};
+  ${({ size }) => size === 'state' && state};
+  ${({ size }) => size === 'city' && city};
 `;
 
 export const Container = styled.div`

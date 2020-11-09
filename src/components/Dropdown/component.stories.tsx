@@ -34,19 +34,27 @@ export const WithHelpers = () => {
   return (
     <Container>
       <Dropdown
-        target={<Dropdown.DefaultTarget>Click here!</Dropdown.DefaultTarget>}
+        target={<Dropdown.DefaultTarget size="city">Click here!</Dropdown.DefaultTarget>}
         data-testid="dropdown"
       >
         {content}
       </Dropdown>
       <Dropdown
-        target={<Dropdown.DefaultTarget variant="input">Click here!</Dropdown.DefaultTarget>}
+        target={
+          <Dropdown.DefaultTarget variant="input" size="state">
+            Click here!
+          </Dropdown.DefaultTarget>
+        }
         data-testid="dropdown-input1"
       >
         {content}
       </Dropdown>
       <Dropdown
-        target={<Dropdown.DefaultTarget variant="input">Click here!</Dropdown.DefaultTarget>}
+        target={
+          <Dropdown.DefaultTarget variant="input" size="country">
+            Click here!
+          </Dropdown.DefaultTarget>
+        }
         data-testid="dropdown-input2"
       >
         {content}
