@@ -19,6 +19,7 @@ export const Default = () => (
       <CoinIcon symbol={coin} key={coin} />
     ))}
     <CoinIcon symbol="BNB" />
+    <CoinIcon symbol="BTCB-1DE" />
   </Container>
 );
 
