@@ -13,14 +13,16 @@ export const CoinIcon = ({ symbol, 'data-testid': testId, className }: Props) =>
     switch (symbol) {
       case 'BTC':
         return logos.CoinBtc;
+      case 'BTCB':
+        return logos.CoinBtcb;
       case 'BTC.B':
         return logos.CoinBtcb;
       case 'BTCB-1DE':
         return logos.CoinBtcb;
-      case 'BTCE':
-        return logos.CoinBtce;
       case 'BNB':
         return logos.CoinBnb;
+      case 'BTCE':
+        return logos.CoinBtce;
       case 'WBTC':
         return logos.CoinWbtc;
       default:
