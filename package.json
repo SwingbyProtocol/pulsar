@@ -75,6 +75,7 @@
     "typescript": "^4.0.5"
   },
   "dependencies": {
+    "@swingby-protocol/sdk": "^1.0.0-alpha.3",
     "@tippyjs/react": "^4.2.0",
     "@types/styled-components": "^5.1.4",
     "@typescript-eslint/eslint-plugin": "4.6.1",
