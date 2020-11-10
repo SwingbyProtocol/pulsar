@@ -97,6 +97,7 @@ export const Input = styled.input`
   padding-right: ${({ theme }) => em(theme.pulsar.size.closet, theme.pulsar.size.room)};
   font-size: ${({ theme }) => em(theme.pulsar.size.room)};
   font-weight: 700;
+  min-width: 0;
   ${({ theme }) => transitions(['color'], `${theme.pulsar.duration.normal} ease-in-out`)};
 
   ::placeholder {
