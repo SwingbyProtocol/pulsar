@@ -6,6 +6,7 @@ export { formatCryptoAsset, formatFiatAsset } from './modules/intl';
 export { AppLogo } from './components/AppLogo';
 export { Button } from './components/Button';
 export { Card } from './components/Card';
+export { CoinIcon } from './components/CoinIcon';
 export { Dropdown } from './components/Dropdown';
 export { Icon } from './components/Icon';
 export { ListItem } from './components/ListItem';
