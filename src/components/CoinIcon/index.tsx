@@ -1,12 +1,11 @@
 import React, { useMemo } from 'react';
-import type { Coin } from '@swingby-protocol/sdk';
 
 import { Testable, useBuildTestId } from '../../modules/testing';
 import { logos } from '../../modules/logos';
 
 import { StyledCoinIcon, StyledPlaceholder } from './styles';
 
-type Props = Testable & { symbol: Coin; className?: string };
+type Props = Testable & { symbol: string; className?: string };
 
 export const CoinIcon = ({ symbol, 'data-testid': testId, className }: Props) => {
   const { buildTestId } = useBuildTestId({ id: testId });
