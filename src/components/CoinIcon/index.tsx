@@ -15,6 +15,8 @@ export const CoinIcon = ({ symbol, 'data-testid': testId, className }: Props) =>
         return logos.CoinBtc;
       case 'BTC.B':
         return logos.CoinBtcb;
+      case 'BTCB-1DE':
+        return logos.CoinBtcb;
       case 'BTCE':
         return logos.CoinBtce;
       case 'BNB':
