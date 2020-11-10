@@ -18,6 +18,7 @@ export const Default = () => (
     {SUPPORTED_COINS.map((coin) => (
       <CoinIcon symbol={coin} key={coin} />
     ))}
+    <CoinIcon symbol="BNB" />
   </Container>
 );
 
