@@ -40,7 +40,7 @@ export const WithAll = () => (
     description="A description"
     left={<div>€</div>}
     right={
-      <Button variant="primary" size="city" shape="fit">
+      <Button variant="primary" size="city">
         MAX
       </Button>
     }
