@@ -30,6 +30,7 @@ export const Component = ({
   return (
     <Context.Provider value={{ isShowing, onClose: toggle }}>
       <Tooltip
+        placement="auto"
         {...otherProps}
         className={className}
         interactive={true}
