@@ -2,6 +2,7 @@ export { PulsarTheme, PulsarThemeProvider, PulsarThemeType } from './modules/the
 export { PulsarGlobalStyles } from './modules/global';
 export { logos } from './modules/logos';
 export { formatCryptoAsset, formatFiatAsset } from './modules/intl';
+export { useMatchMedia } from './modules/match-media';
 
 export { AppLogo } from './components/AppLogo';
 export { Button } from './components/Button';
