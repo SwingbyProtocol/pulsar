@@ -1,29 +1,62 @@
-import styled, { css } from 'styled-components';
+import styled, { css, DefaultTheme } from 'styled-components';
 import { em, transitions } from 'polished';
 
 export const VARIANTS = ['primary', 'secondary', 'tertiary'] as const;
 export type Variant = typeof VARIANTS[number];
 
-export const SIZES = ['country', 'state', 'city'] as const;
+export const SIZES = ['country', 'state', 'city', 'town'] as const;
 export type Size = typeof SIZES[number];
 
-const country = css`
+export const SHAPES = ['fill', 'square', 'circle'] as const;
+export type Shape = typeof SHAPES[number];
+
+const square = (
+  size: keyof DefaultTheme['pulsar']['size'],
+  base: keyof DefaultTheme['pulsar']['size'] = 'house',
+) =>
+  css`
+    padding: 0;
+    width: ${({ theme }) => em(theme.pulsar.size[size], theme.pulsar.size[base])};
+  `;
+
+const circle = (...args: Parameters<typeof square>) =>
+  css`
+    ${square(...args)};
+    border-radius: 50%;
+  `;
+
+const country = css<{ shape: Shape }>`
   border-radius: ${({ theme }) => em(theme.pulsar.size.box)};
   height: ${({ theme }) => em(theme.pulsar.size.country)};
   padding: 0 ${({ theme }) => em(theme.pulsar.size.house)};
+  ${({ shape }) => shape === 'square' && square('country')};
+  ${({ shape }) => shape === 'circle' && circle('country')};
 `;
 
-const state = css`
+const state = css<{ shape: Shape }>`
   border-radius: ${({ theme }) => em(theme.pulsar.size.box)};
   height: ${({ theme }) => em(theme.pulsar.size.state)};
   padding: 0 ${({ theme }) => em(theme.pulsar.size.house)};
+  ${({ shape }) => shape === 'square' && square('state')};
+  ${({ shape }) => shape === 'circle' && circle('state')};
 `;
 
-const city = css`
+const city = css<{ shape: Shape }>`
   border-radius: ${({ theme }) => em(theme.pulsar.size.box, theme.pulsar.size.room)};
   font-size: ${({ theme }) => em(theme.pulsar.size.room)};
   height: ${({ theme }) => em(theme.pulsar.size.city, theme.pulsar.size.room)};
   padding: 0 ${({ theme }) => em(theme.pulsar.size.house, theme.pulsar.size.room)};
+  ${({ shape }) => shape === 'square' && square('city', 'room')};
+  ${({ shape }) => shape === 'circle' && circle('city', 'room')};
+`;
+
+const town = css<{ shape: Shape }>`
+  border-radius: ${({ theme }) => em(theme.pulsar.size.box, theme.pulsar.size.room)};
+  font-size: ${({ theme }) => em(theme.pulsar.size.room)};
+  height: ${({ theme }) => em(theme.pulsar.size.town, theme.pulsar.size.room)};
+  padding: 0 ${({ theme }) => em(theme.pulsar.size.house, theme.pulsar.size.room)};
+  ${({ shape }) => shape === 'square' && square('town', 'room')};
+  ${({ shape }) => shape === 'circle' && circle('town', 'room')};
 `;
 
 const primary = css`
@@ -62,7 +95,7 @@ const tertiary = css`
   }
 `;
 
-export const StyledButton = styled.button<{ size: Size; variant: Variant }>`
+export const StyledButton = styled.button<{ size: Size; variant: Variant; shape: Shape }>`
   align-items: center;
   border: none;
   cursor: pointer;
@@ -79,6 +112,7 @@ export const StyledButton = styled.button<{ size: Size; variant: Variant }>`
   ${({ size }) => size === 'country' && country};
   ${({ size }) => size === 'state' && state};
   ${({ size }) => size === 'city' && city};
+  ${({ size }) => size === 'town' && town};
 
   ${({ variant }) => variant === 'primary' && primary};
   ${({ variant }) => variant === 'secondary' && secondary};

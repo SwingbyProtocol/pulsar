@@ -3,12 +3,12 @@ import { useSpring, animated } from 'react-spring';
 
 import { Testable } from '../../modules/testing';
 
-import { Size, StyledButton, Shadow, Variant } from './styles';
+import { Size, StyledButton, Shadow, Variant, Shape } from './styles';
 
 type Props = Omit<React.AllHTMLAttributes<HTMLElement>, 'size'> &
-  Testable & { size: Size; variant: Variant };
+  Testable & { size: Size; variant: Variant; shape?: Shape };
 
-export const Button = ({ onClick, ...props }: Props) => {
+export const Button = ({ onClick, shape = 'fill', ...props }: Props) => {
   const [{ shadow, opacity }, set] = useSpring(() => ({
     from: { shadow: 0, opacity: 0.3 },
     shadow: 0,
@@ -25,7 +25,13 @@ export const Button = ({ onClick, ...props }: Props) => {
   );
 
   return (
-    <StyledButton role="button" {...props} onClick={click} as={props.href ? 'a' : 'button'}>
+    <StyledButton
+      role="button"
+      {...props}
+      shape={shape}
+      onClick={click}
+      as={props.href ? 'a' : 'button'}
+    >
       <Shadow
         variant={props.variant}
         as={animated.div}

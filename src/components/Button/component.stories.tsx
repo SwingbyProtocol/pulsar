@@ -2,7 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { Meta } from '@storybook/react';
 
-import { SIZES } from './styles';
+import { Icon } from '../Icon';
+
+import { SIZES, SHAPES, Variant } from './styles';
 
 import { Button } from './';
 
@@ -13,35 +15,23 @@ const meta: Meta = {
 
 export default meta;
 
-export const Primary = () => (
+const Common = ({ variant }: { variant: Variant }) => (
   <Container>
-    {SIZES.map((size) => (
-      <Button variant="primary" size={size} key={size}>
-        A button (size={size})
-      </Button>
-    ))}
+    {SHAPES.map((shape) =>
+      SIZES.map((size) => (
+        <Button variant={variant} size={size} key={`${shape}-${size}`} shape={shape}>
+          {shape === 'fill' ? `A button (size=${size})` : <Icon.Search />}
+        </Button>
+      )),
+    )}
   </Container>
 );
 
-export const Secondary = () => (
-  <Container>
-    {SIZES.map((size) => (
-      <Button variant="secondary" size={size} key={size}>
-        A button (size={size})
-      </Button>
-    ))}
-  </Container>
-);
+export const Primary = () => <Common variant="primary" />;
 
-export const Tertiary = () => (
-  <Container>
-    {SIZES.map((size) => (
-      <Button variant="tertiary" size={size} key={size}>
-        A button (size={size})
-      </Button>
-    ))}
-  </Container>
-);
+export const Secondary = () => <Common variant="secondary" />;
+
+export const Tertiary = () => <Common variant="tertiary" />;
 
 const Container = styled.div`
   > *:not(:last-child) {
