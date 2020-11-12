@@ -33,6 +33,7 @@ export const Button = ({ onClick, shape = 'fill', ...props }: Props) => {
       as={props.href ? 'a' : 'button'}
     >
       <Shadow
+        shape={shape}
         variant={props.variant}
         as={animated.div}
         style={{

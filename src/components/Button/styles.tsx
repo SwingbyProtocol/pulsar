@@ -144,7 +144,11 @@ const shadowTertiary = css`
   color: ${({ theme }) => theme.pulsar.color.primary.active};
 `;
 
-export const Shadow = styled.div<{ variant: Variant }>`
+const circleShadow = css`
+  border-radius: 50%;
+`;
+
+export const Shadow = styled.div<{ variant: Variant; shape: Shape }>`
   font-size: 1rem;
   position: absolute;
   top: 0;
@@ -158,4 +162,6 @@ export const Shadow = styled.div<{ variant: Variant }>`
   ${({ variant }) => variant === 'primary' && shadowPrimary};
   ${({ variant }) => variant === 'secondary' && shadowSecondary};
   ${({ variant }) => variant === 'tertiary' && shadowTertiary};
+
+  ${({ shape }) => shape === 'circle' && circleShadow};
 `;
