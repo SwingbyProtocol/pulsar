@@ -15,14 +15,24 @@ const meta: Meta = {
 
 export default meta;
 
+const DISABLED = [false, true] as const;
+
 const Common = ({ variant }: { variant: Variant }) => (
   <Container>
     {SHAPES.map((shape) =>
-      SIZES.map((size) => (
-        <Button variant={variant} size={size} key={`${shape}-${size}`} shape={shape}>
-          {shape === 'fill' ? `A button (size=${size})` : <Icon.Search />}
-        </Button>
-      )),
+      SIZES.map((size) =>
+        DISABLED.map((disabled) => (
+          <Button
+            variant={variant}
+            size={size}
+            key={`${shape}-${size}`}
+            shape={shape}
+            disabled={disabled}
+          >
+            {shape === 'fill' ? `A button (size=${size})` : <Icon.Search />}
+          </Button>
+        )),
+      ),
     )}
   </Container>
 );
