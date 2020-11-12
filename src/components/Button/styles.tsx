@@ -17,12 +17,16 @@ const square = (
   css`
     padding: 0;
     width: ${({ theme }) => em(theme.pulsar.size[size], theme.pulsar.size[base])};
+    flex-shrink: 0;
+    flex-grow: 0;
   `;
 
 const circle = (...args: Parameters<typeof square>) =>
   css`
     ${square(...args)};
     border-radius: 50%;
+    flex-shrink: 0;
+    flex-grow: 0;
   `;
 
 const country = css<{ shape: Shape }>`
