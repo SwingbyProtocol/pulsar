@@ -95,6 +95,11 @@ const tertiary = css`
   }
 `;
 
+const disabled = css`
+  opacity: 0.3;
+  pointer-events: none;
+`;
+
 export const StyledButton = styled.button<{ size: Size; variant: Variant; shape: Shape }>`
   align-items: center;
   border: none;
@@ -117,6 +122,10 @@ export const StyledButton = styled.button<{ size: Size; variant: Variant; shape:
   ${({ variant }) => variant === 'primary' && primary};
   ${({ variant }) => variant === 'secondary' && secondary};
   ${({ variant }) => variant === 'tertiary' && tertiary};
+
+  :disabled {
+    ${disabled};
+  }
 `;
 
 const shadowPrimary = css`
