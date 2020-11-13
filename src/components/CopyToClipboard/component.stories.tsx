@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { SIZES } from '../TextInput/styled'; // eslint-disable-line import/no-internal-modules
+import { SIZES } from './styled';
 
 import { CopyToClipboard } from './';
 
