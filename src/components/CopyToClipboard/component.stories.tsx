@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { SIZES } from './styled';
+import { SIZES } from '../Button/styles'; // eslint-disable-line import/no-internal-modules
+import { Icon } from '../Icon';
 
 import { CopyToClipboard } from './';
 
@@ -16,6 +17,7 @@ export const Default = () => (
       <CopyToClipboard
         size={size}
         key={size}
+        left={<Icon.Swingby />}
         value={`A ${size}-sized CopyToClipboard component`}
         data-testid={`copy-${size}`}
       />

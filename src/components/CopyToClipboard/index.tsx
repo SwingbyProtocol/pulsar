@@ -1,13 +1,19 @@
 import React, { useCallback } from 'react';
 
 import { Testable, useBuildTestId } from '../../modules/testing';
+import type { Size } from '../Button/styles'; // eslint-disable-line import/no-internal-modules
 import { Icon } from '../Icon';
 
-import { Container, Content, IconContainer, Size } from './styled';
+import { Container, Content, Left } from './styled';
 
-export type Props = Testable & { className?: string; value: string; size: Size };
+export type Props = Testable & {
+  className?: string;
+  value: string;
+  size: Size;
+  left?: React.ReactNode;
+};
 
-export const CopyToClipboard = ({ value, 'data-testid': testId, className, size }: Props) => {
+export const CopyToClipboard = ({ value, 'data-testid': testId, className, size, left }: Props) => {
   const { buildTestId } = useBuildTestId({ id: testId });
 
   const copy = useCallback(() => {
@@ -16,11 +22,16 @@ export const CopyToClipboard = ({ value, 'data-testid': testId, className, size 
   }, [value]);
 
   return (
-    <Container className={className} data-testid={buildTestId('')} size={size}>
+    <Container
+      className={className}
+      data-testid={buildTestId('')}
+      size={size}
+      variant="secondary"
+      onClick={copy}
+    >
+      {left && <Left data-testid={buildTestId('left')}>{left}</Left>}
       <Content data-testid={buildTestId('content')}>{value}</Content>
-      <IconContainer onClick={copy} data-testid={buildTestId('copy-btn')}>
-        <Icon.Paste />
-      </IconContainer>
+      <Icon.Paste data-testid={buildTestId('icon')} />
     </Container>
   );
 };
