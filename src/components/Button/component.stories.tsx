@@ -29,7 +29,7 @@ const Common = ({ variant }: { variant: Variant }) => (
             shape={shape}
             disabled={disabled}
           >
-            {shape === 'fill' ? `A button (size=${size})` : <Icon.Search />}
+            {shape === 'fill' || shape === 'fit' ? `A button (size=${size})` : <Icon.Search />}
           </Button>
         )),
       ),
