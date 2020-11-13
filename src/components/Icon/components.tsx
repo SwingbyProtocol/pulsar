@@ -18,6 +18,7 @@ export { ReactComponent as NetworkCapacity } from './assets/NetworkCapacity.svg'
 export { ReactComponent as NetworkRewards } from './assets/NetworkRewards.svg';
 export { ReactComponent as NetworkValidators } from './assets/NetworkValidators.svg';
 export { ReactComponent as NetworkVolume } from './assets/NetworkVolume.svg';
+export { ReactComponent as Paste } from './assets/Paste.svg';
 export { ReactComponent as Pinterest } from './assets/Pinterest.svg';
 export { ReactComponent as Search } from './assets/Search.svg';
 export { ReactComponent as SwapHorizontal } from './assets/SwapHorizontal.svg';
