@@ -29,8 +29,8 @@ export const CopyToClipboard = ({ value, 'data-testid': testId, className, size,
       variant="secondary"
       onClick={copy}
     >
-      {left && <Left data-testid={buildTestId('left')}>{left}</Left>}
       <ContentWrapper>
+        {left && <Left data-testid={buildTestId('left')}>{left}</Left>}
         <Content data-testid={buildTestId('content')}>{value}</Content>
       </ContentWrapper>
       <Icon.Paste data-testid={buildTestId('icon')} />
