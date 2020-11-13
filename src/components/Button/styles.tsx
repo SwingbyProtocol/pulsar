@@ -7,7 +7,7 @@ export type Variant = typeof VARIANTS[number];
 export const SIZES = ['country', 'state', 'city', 'town'] as const;
 export type Size = typeof SIZES[number];
 
-export const SHAPES = ['fill', 'square', 'circle'] as const;
+export const SHAPES = ['fill', 'square', 'circle', 'fit'] as const;
 export type Shape = typeof SHAPES[number];
 
 const square = (
@@ -28,6 +28,14 @@ const circle = (...args: Parameters<typeof square>) =>
     flex-shrink: 0;
     flex-grow: 0;
   `;
+
+const fill = css`
+  width: 100%;
+`;
+
+const fit = css`
+  width: fit-content;
+`;
 
 const country = css<{ shape: Shape }>`
   border-radius: ${({ theme }) => em(theme.pulsar.size.box)};
@@ -115,13 +123,15 @@ export const StyledButton = styled.button<{ size: Size; variant: Variant; shape:
   justify-content: center;
   outline: none;
   position: relative;
-  width: 100%;
   ${({ theme }) => transitions(['background', 'color'], theme.pulsar.duration.normal)};
 
   ${({ size }) => size === 'country' && country};
   ${({ size }) => size === 'state' && state};
   ${({ size }) => size === 'city' && city};
   ${({ size }) => size === 'town' && town};
+
+  ${({ shape }) => shape === 'fill' && fill};
+  ${({ shape }) => shape === 'fit' && fit};
 
   ${({ variant }) => variant === 'primary' && primary};
   ${({ variant }) => variant === 'secondary' && secondary};
