@@ -4,7 +4,7 @@ import { em, transitions } from 'polished';
 export const VARIANTS = ['primary', 'secondary', 'tertiary'] as const;
 export type Variant = typeof VARIANTS[number];
 
-export const SIZES = ['country', 'state', 'city', 'town'] as const;
+export const SIZES = ['country', 'state', 'city', 'town', 'street'] as const;
 export type Size = typeof SIZES[number];
 
 export const SHAPES = ['fill', 'square', 'circle', 'fit'] as const;
@@ -71,6 +71,15 @@ const town = css<{ shape: Shape }>`
   ${({ shape }) => shape === 'circle' && circle('town', 'room')};
 `;
 
+const street = css<{ shape: Shape }>`
+  border-radius: ${({ theme }) => em(theme.pulsar.size.box, theme.pulsar.size.closet)};
+  font-size: ${({ theme }) => em(theme.pulsar.size.closet)};
+  height: ${({ theme }) => em(theme.pulsar.size.street, theme.pulsar.size.closet)};
+  padding: 0 ${({ theme }) => em(theme.pulsar.size.house, theme.pulsar.size.closet)};
+  ${({ shape }) => shape === 'square' && square('street', 'closet')};
+  ${({ shape }) => shape === 'circle' && circle('street', 'closet')};
+`;
+
 const primary = css`
   background: ${({ theme }) => theme.pulsar.color.primary.normal};
   color: ${({ theme }) => theme.pulsar.color.primary.text};
@@ -129,6 +138,7 @@ export const StyledButton = styled.button<{ size: Size; variant: Variant; shape:
   ${({ size }) => size === 'state' && state};
   ${({ size }) => size === 'city' && city};
   ${({ size }) => size === 'town' && town};
+  ${({ size }) => size === 'street' && street};
 
   ${({ shape }) => shape === 'fill' && fill};
   ${({ shape }) => shape === 'fit' && fit};
