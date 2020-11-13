@@ -9,6 +9,7 @@ export { AppLogo } from './components/AppLogo';
 export { Button } from './components/Button';
 export { Card } from './components/Card';
 export { CoinIcon } from './components/CoinIcon';
+export { CopyToClipboard } from './components/CopyToClipboard';
 export { Dropdown } from './components/Dropdown';
 export { Icon } from './components/Icon';
 export { ListItem } from './components/ListItem';
