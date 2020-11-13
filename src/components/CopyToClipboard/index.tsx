@@ -4,7 +4,7 @@ import { Testable, useBuildTestId } from '../../modules/testing';
 import type { Size } from '../Button/styles'; // eslint-disable-line import/no-internal-modules
 import { Icon } from '../Icon';
 
-import { Container, Content, Left } from './styled';
+import { Container, Content, ContentWrapper, Left } from './styled';
 
 export type Props = Testable & {
   className?: string;
@@ -29,8 +29,10 @@ export const CopyToClipboard = ({ value, 'data-testid': testId, className, size,
       variant="secondary"
       onClick={copy}
     >
-      {left && <Left data-testid={buildTestId('left')}>{left}</Left>}
-      <Content data-testid={buildTestId('content')}>{value}</Content>
+      <ContentWrapper>
+        {left && <Left data-testid={buildTestId('left')}>{left}</Left>}
+        <Content data-testid={buildTestId('content')}>{value}</Content>
+      </ContentWrapper>
       <Icon.Paste data-testid={buildTestId('icon')} />
     </Container>
   );
