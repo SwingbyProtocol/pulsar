@@ -1,7 +1,12 @@
 export { PulsarTheme, PulsarThemeProvider, PulsarThemeType } from './modules/themes';
 export { PulsarGlobalStyles } from './modules/global';
 export { logos } from './modules/logos';
-export { formatCryptoAsset, formatFiatAsset } from './modules/intl';
+export {
+  formatCryptoAsset,
+  formatFiatAsset,
+  getCryptoAssetFormatter,
+  getFiatAssetFormatter,
+} from './modules/intl';
 export { useMatchMedia } from './modules/match-media';
 export { reset } from './modules/reset';
 
