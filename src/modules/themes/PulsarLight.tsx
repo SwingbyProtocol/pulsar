@@ -6,7 +6,8 @@ export const PulsarLight = {
     color: {
       bg: {
         normal: '#fff',
-        masked: '#f2f2f2',
+        masked: '#fafeff',
+        hover: '#fbfbfb',
       },
 
       text: {
