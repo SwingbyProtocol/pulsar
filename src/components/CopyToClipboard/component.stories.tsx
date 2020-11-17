@@ -25,6 +25,21 @@ export const Default = () => (
   </Container>
 );
 
+export const Accent = () => (
+  <Container>
+    {SIZES.map((size) => (
+      <CopyToClipboard
+        variant="accent"
+        size={size}
+        key={size}
+        left={<Icon.Swingby />}
+        value={`A ${size}-sized CopyToClipboard component`}
+        data-testid={`copy-${size}`}
+      />
+    ))}
+  </Container>
+);
+
 const Container = styled.div`
   > *:not(:last-child) {
     margin-bottom: 1em;

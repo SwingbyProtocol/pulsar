@@ -26,7 +26,7 @@ export const PulsarDark: PulsarThemeType = {
       },
 
       border: {
-        normal: '#1c232f',
+        normal: '#353f4c',
         danger: '#fc012a',
       },
     },
