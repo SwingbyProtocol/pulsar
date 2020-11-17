@@ -20,8 +20,6 @@ describe('CopyToClipboard', () => {
       },
     );
 
-    cy.percySnapshot('CopyToClipboard');
-
     cy.get('[data-testid="light.copy-country"]')
       .click()
       .then(() => {
