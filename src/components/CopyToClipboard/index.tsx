@@ -4,16 +4,24 @@ import { Testable, useBuildTestId } from '../../modules/testing';
 import type { Size } from '../Button/styles'; // eslint-disable-line import/no-internal-modules
 import { Icon } from '../Icon';
 
-import { Container, Content, ContentWrapper, Left } from './styled';
+import { Container, Content, ContentWrapper, Left, Variant } from './styled';
 
 export type Props = Testable & {
   className?: string;
   value: string;
   size: Size;
   left?: React.ReactNode;
+  variant?: Variant;
 };
 
-export const CopyToClipboard = ({ value, 'data-testid': testId, className, size, left }: Props) => {
+export const CopyToClipboard = ({
+  value,
+  'data-testid': testId,
+  className,
+  size,
+  left,
+  variant = 'normal',
+}: Props) => {
   const { buildTestId } = useBuildTestId({ id: testId });
 
   const copy = useCallback(() => {
@@ -27,6 +35,7 @@ export const CopyToClipboard = ({ value, 'data-testid': testId, className, size,
       data-testid={buildTestId('')}
       size={size}
       variant="secondary"
+      innerVariant={variant}
       onClick={copy}
     >
       <ContentWrapper>

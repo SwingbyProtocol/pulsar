@@ -1,5 +1,13 @@
 describe('CopyToClipboard', () => {
   it('renders correctly', () => {
+    cy.visitStory({ storyId: 'copytoclipboard--default' });
+    cy.percySnapshot('CopyToClipboard default variant');
+
+    cy.visitStory({ storyId: 'copytoclipboard--accent' });
+    cy.percySnapshot('CopyToClipboard accent variant');
+  });
+
+  it('copies to clipboard', () => {
     let clipboard = '';
     cy.visitStory(
       { storyId: 'copytoclipboard--default' },
@@ -11,8 +19,6 @@ describe('CopyToClipboard', () => {
         },
       },
     );
-
-    cy.percySnapshot('CopyToClipboard');
 
     cy.get('[data-testid="light.copy-country"]')
       .click()

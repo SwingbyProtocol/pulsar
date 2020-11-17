@@ -1,22 +1,29 @@
 import { em } from 'polished';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Button } from '../Button';
 
-export const Container = styled(Button)`
+export const VARIANTS = ['normal', 'accent'] as const;
+export type Variant = typeof VARIANTS[number];
+
+const notAccent = css`
+  background: ${({ theme }) => theme.pulsar.color.border.normal};
+  border-color: transparent;
+  color: ${({ theme }) => theme.pulsar.color.text.accent};
+`;
+
+export const Container = styled(Button)<{ innerVariant: Variant }>`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: right;
-  background: ${({ theme }) => theme.pulsar.color.border.normal};
-  border-color: transparent;
-  color: ${({ theme }) => theme.pulsar.color.text.accent};
   text-align: left;
-  background: ${({ theme }) => theme.pulsar.color.border.normal};
   width: 100%;
   border-radius: ${({ theme }) => em(theme.pulsar.size.box)};
   padding: 0 ${({ theme }) => em(theme.pulsar.size.closet)};
   position: relative;
+
+  ${({ innerVariant }) => innerVariant === 'normal' && notAccent};
 `;
 
 export const ContentWrapper = styled.div`

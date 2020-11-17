@@ -18,7 +18,7 @@ export const PulsarAccent: PulsarThemeType = {
       },
 
       border: {
-        normal: '#d7dade',
+        normal: '#353f4c',
         danger: '#fc012a',
       },
     },

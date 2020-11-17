@@ -93,7 +93,7 @@ const primary = css`
 
 const secondary = css`
   border: none;
-  background: ${({ theme }) => theme.pulsar.color.text.normal};
+  background: ${({ theme }) => theme.pulsar.color.text.accent};
   color: ${({ theme }) => theme.pulsar.color.bg.normal};
 
   :hover,
