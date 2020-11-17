@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useBuildTestId } from '../testing';
 
-import { formatFiatAsset, formatCryptoAsset } from './';
+import { getFiatAssetFormatter, getCryptoAssetFormatter } from './';
 
 export default {
   title: 'FormattingAssets',
@@ -13,25 +13,25 @@ export const Fiat = () => {
   return (
     <>
       <div data-testid={buildTestId('en')}>
-        {formatFiatAsset({ amount: 12345.67, locale: 'en-US', currency: 'USD' })}
+        {getFiatAssetFormatter({ locale: 'en-US', currency: 'USD' }).format(12345.67)}
       </div>
       <div data-testid={buildTestId('es')}>
-        {formatFiatAsset({ amount: 12345.67, locale: 'es-ES', currency: 'EUR' })}
+        {getFiatAssetFormatter({ locale: 'es-ES', currency: 'EUR' }).format(12345.67)}
       </div>
       <div data-testid={buildTestId('es-usd')}>
-        {formatFiatAsset({ amount: 12345.67, locale: 'es-ES', currency: 'USD' })}
+        {getFiatAssetFormatter({ locale: 'es-ES', currency: 'USD' }).format(12345.67)}
       </div>
       <div data-testid={buildTestId('es-cny')}>
-        {formatFiatAsset({ amount: 12345.67, locale: 'es-ES', currency: 'CNY' })}
+        {getFiatAssetFormatter({ locale: 'es-ES', currency: 'CNY' }).format(12345.67)}
       </div>
       <div data-testid={buildTestId('en-integer')}>
-        {formatFiatAsset({ amount: 12345, locale: 'en-US', currency: 'USD' })}
+        {getFiatAssetFormatter({ locale: 'en-US', currency: 'USD' }).format(12345)}
       </div>
       <div data-testid={buildTestId('en-too-many-digist')}>
-        {formatFiatAsset({ amount: 12345.6789, locale: 'en-US', currency: 'USD' })}
+        {getFiatAssetFormatter({ locale: 'en-US', currency: 'USD' }).format(12345.6789)}
       </div>
       <div data-testid={buildTestId('en-zero')}>
-        {formatFiatAsset({ amount: 0, locale: 'en-US', currency: 'USD' })}
+        {getFiatAssetFormatter({ locale: 'en-US', currency: 'USD' }).format(0)}
       </div>
     </>
   );
@@ -42,19 +42,19 @@ export const Crypto = () => {
   return (
     <>
       <div data-testid={buildTestId('en')}>
-        {formatCryptoAsset({ amount: 12345.67, locale: 'en-US', displaySymbol: 'BTC' })}
+        {getCryptoAssetFormatter({ locale: 'en-US', displaySymbol: 'BTC' }).format(12345.67)}
       </div>
       <div data-testid={buildTestId('es')}>
-        {formatCryptoAsset({ amount: 12345.67, locale: 'es-ES', displaySymbol: 'BTC' })}
+        {getCryptoAssetFormatter({ locale: 'es-ES', displaySymbol: 'BTC' }).format(12345.67)}
       </div>
       <div data-testid={buildTestId('en-integer')}>
-        {formatCryptoAsset({ amount: 12345, locale: 'en-US', displaySymbol: 'BTC' })}
+        {getCryptoAssetFormatter({ locale: 'en-US', displaySymbol: 'BTC' }).format(12345)}
       </div>
       <div data-testid={buildTestId('en-too-many-digist')}>
-        {formatCryptoAsset({ amount: 12345.6789, locale: 'en-US', displaySymbol: 'BTC' })}
+        {getCryptoAssetFormatter({ locale: 'en-US', displaySymbol: 'BTC' }).format(12345.6789)}
       </div>
       <div data-testid={buildTestId('en-zero')}>
-        {formatCryptoAsset({ amount: 0, locale: 'en-US', displaySymbol: 'BTC' })}
+        {getCryptoAssetFormatter({ locale: 'en-US', displaySymbol: 'BTC' }).format(0)}
       </div>
     </>
   );

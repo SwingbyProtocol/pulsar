@@ -3,13 +3,17 @@ import { NON_BREAKING_SPACE } from '../constants';
 export const getCryptoAssetFormatter = ({
   locale,
   displaySymbol,
+  minimumFractionDigits = 2,
+  maximumFractionDigits = 20,
 }: {
   locale: string;
   displaySymbol: string;
+  minimumFractionDigits?: number;
+  maximumFractionDigits?: number;
 }) => {
   const formatter = Intl.NumberFormat(locale, {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 20,
+    minimumFractionDigits,
+    maximumFractionDigits,
   });
 
   const format: typeof formatter.format = (number: number) =>
