@@ -37,7 +37,7 @@ const genericBuildTestId = ({
     for (let i = 0; i < idArray.length; i++) {
       if (parentArray[i] === idArray[i]) continue;
       if (i === 0) return idParam;
-      return idArray.slice(i);
+      return idArray.slice(i).join('.');
     }
 
     return idParam;
