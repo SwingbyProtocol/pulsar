@@ -16,7 +16,7 @@ export const Container = styled(Button)<{ innerVariant: Variant }>`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: right;
+  justify-content: flex-end;
   text-align: left;
   width: 100%;
   border-radius: ${({ theme }) => em(theme.pulsar.size.box)};
