@@ -19,23 +19,45 @@ export const PulsarTestIdProvider = ({
   );
 };
 
-const genericBuildTestId = ({ parent, id }: { parent?: string; id?: string }) => {
-  if (!parent && !id) return undefined;
-  if (!parent || id?.startsWith(parent)) return id;
-  if (!id) return parent;
-  return `${parent}.${id}`;
+const genericBuildTestId = ({
+  context,
+  parent,
+  id: idParam,
+}: {
+  context?: string;
+  parent?: string;
+  id?: string;
+}) => {
+  const id = (() => {
+    if (!idParam || !parent) return idParam;
+
+    const parentArray = parent.split('.');
+    const idArray = idParam.split('.');
+
+    for (let i = 0; i < idArray.length; i++) {
+      if (parentArray[i] === idArray[i]) continue;
+      if (i === 0) return idParam;
+      return idArray.slice(i);
+    }
+
+    return idParam;
+  })();
+
+  const withoutContext = [parent, id].filter((it) => !!it).join('.');
+  if (!context || withoutContext.startsWith(context)) {
+    return withoutContext;
+  }
+
+  return [context, withoutContext].filter((it) => !!it).join('.');
 };
 
 export const useBuildTestId = ({ id: parent }: { id?: string } = {}) => {
-  const contextTestId = useContext(PulsarTestContext);
+  const context = useContext(PulsarTestContext);
   return useMemo(() => {
     const buildTestId = (id: string) => {
-      return genericBuildTestId({
-        parent: genericBuildTestId({ parent: contextTestId, id: parent }),
-        id,
-      });
+      return genericBuildTestId({ context, parent, id });
     };
 
     return { buildTestId } as const;
-  }, [parent, contextTestId]);
+  }, [parent, context]);
 };
