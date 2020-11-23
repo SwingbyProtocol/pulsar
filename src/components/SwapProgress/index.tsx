@@ -6,12 +6,7 @@ import { getCoinLogo, logos } from '../../modules/logos';
 
 import { Svg } from './styled';
 
-export const STATUSES = [
-  'awaiting-deposit',
-  'processing-swap',
-  'sending-swap',
-  'completed',
-] as const;
+export const STATUSES = ['waiting', 'pending', 'sending', 'completed'] as const;
 type Status = typeof STATUSES[number];
 
 export const SwapProgress = ({
