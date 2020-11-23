@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Meta } from '@storybook/react';
-import { SUPPORTED_COINS } from '@swingby-protocol/sdk';
+import { COINS_TEST, COINS_PRODUCTION } from '@swingby-protocol/sdk';
 
 import { CoinIcon } from './';
 
@@ -15,7 +15,10 @@ export default meta;
 export const Default = () => (
   <Container>
     <CoinIcon symbol="this is not a coin" />
-    {SUPPORTED_COINS.map((coin) => (
+    {COINS_TEST.map((coin) => (
+      <CoinIcon symbol={coin} key={coin} />
+    ))}
+    {COINS_PRODUCTION.map((coin) => (
       <CoinIcon symbol={coin} key={coin} />
     ))}
     <CoinIcon symbol="BNB" />
