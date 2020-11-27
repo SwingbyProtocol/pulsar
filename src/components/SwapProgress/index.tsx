@@ -1,4 +1,3 @@
-import { Coin } from '@swingby-protocol/sdk';
 import React, { useMemo } from 'react';
 import { useTheme } from 'styled-components';
 
@@ -16,8 +15,8 @@ export const SwapProgress = ({
   className,
 }: {
   status: Status;
-  currencyIn: Coin;
-  currencyOut: Coin;
+  currencyIn: string;
+  currencyOut: string;
   className?: string;
 }) => {
   const theme = useTheme();
