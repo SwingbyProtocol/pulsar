@@ -15,6 +15,7 @@ export const PulsarDark: PulsarThemeType = {
         normal: '#0f1621',
         masked: '#1c232f',
         hover: '#f00',
+        transparent: 'rgba(15, 22, 34, 0.92)',
       },
 
       text: {
