@@ -30,5 +30,6 @@ export { ReactComponent as SwapVertical } from './assets/SwapVertical.svg';
 export { ReactComponent as Swingby } from './assets/Swingby.svg';
 export { ReactComponent as SwingbyWithName } from './assets/SwingbyWithName.svg';
 export { ReactComponent as Tick } from './assets/Tick.svg';
+export { ReactComponent as TickCircle } from './assets/TickCircle.svg';
 export { ReactComponent as Twitter } from './assets/Twitter.svg';
 export { ReactComponent as YouTube } from './assets/YouTube.svg';
