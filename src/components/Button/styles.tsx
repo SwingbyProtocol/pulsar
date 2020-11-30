@@ -132,6 +132,7 @@ export const StyledButton = styled.button<{ size: Size; variant: Variant; shape:
   justify-content: center;
   outline: none;
   position: relative;
+  text-decoration: none;
   ${({ theme }) => transitions(['background', 'color'], theme.pulsar.duration.normal)};
 
   ${({ size }) => size === 'country' && country};

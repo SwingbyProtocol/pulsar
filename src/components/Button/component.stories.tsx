@@ -16,22 +16,26 @@ const meta: Meta = {
 export default meta;
 
 const DISABLED = [false, true] as const;
+const HREF = [undefined, 'https://swingby.network'] as const;
 
 const Common = ({ variant }: { variant: Variant }) => (
   <Container>
-    {SHAPES.map((shape) =>
-      SIZES.map((size) =>
-        DISABLED.map((disabled) => (
-          <Button
-            variant={variant}
-            size={size}
-            key={`${shape}-${size}`}
-            shape={shape}
-            disabled={disabled}
-          >
-            {shape === 'fill' || shape === 'fit' ? `A button (size=${size})` : <Icon.Search />}
-          </Button>
-        )),
+    {HREF.map((href) =>
+      SHAPES.map((shape) =>
+        SIZES.map((size) =>
+          DISABLED.map((disabled) => (
+            <Button
+              variant={variant}
+              size={size}
+              key={`${href}-${shape}-${size}`}
+              shape={shape}
+              disabled={disabled}
+              href={href}
+            >
+              {shape === 'fill' || shape === 'fit' ? `A button (size=${size})` : <Icon.Search />}
+            </Button>
+          )),
+        ),
       ),
     )}
   </Container>
