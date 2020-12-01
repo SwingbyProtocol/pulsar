@@ -1,18 +1,8 @@
-import React from 'react';
+import { SwapProgress as Component } from './component';
+import { defaultMessages } from './defaultMessages';
 
-import { Graphic } from './Graphic';
-import { Status } from './statuses';
-
-export const SwapProgress = ({
-  status,
-  currencyIn,
-  currencyOut,
-  className,
-}: {
-  status: Status;
-  currencyIn: string;
-  currencyOut: string;
-  className?: string;
-}) => {
-  return <Graphic status={status} currencyIn={currencyIn} currencyOut={currencyOut} />;
+export const SwapProgress = Component as typeof Component & {
+  defaultMessages: typeof defaultMessages;
 };
+
+SwapProgress.defaultMessages = defaultMessages;

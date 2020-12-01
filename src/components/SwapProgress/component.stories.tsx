@@ -17,10 +17,13 @@ export default meta;
 export const Default = () => (
   <Container>
     {STATUSES.map((status) => (
-      <div>
-        <Label>{status}:</Label>
-        <SwapProgress currencyIn="BTC" currencyOut="WBTC" status={status} key={status} />
-      </div>
+      <SwapProgress
+        messages={SwapProgress.defaultMessages({ locale: 'en' })}
+        currencyIn="BTC"
+        currencyOut="WBTC"
+        status={status}
+        key={status}
+      />
     ))}
   </Container>
 );
@@ -35,9 +38,4 @@ const Container = styled.div`
   > *:not(:last-child) {
     margin-bottom: 1em;
   }
-`;
-
-const Label = styled.div`
-  font-size: ${({ theme }) => rem(theme.pulsar.size.room)};
-  margin-bottom: 1em;
 `;

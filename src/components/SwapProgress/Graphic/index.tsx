@@ -29,11 +29,11 @@ export const Graphic = ({
       case 'waiting':
         return 0;
       case 'pending':
+      case 'signing':
+      case 'signing-refund':
         return 1;
       case 'sending':
       case 'sending-refund':
-      case 'signing':
-      case 'signing-refund':
         return 2;
       case 'completed':
       case 'refunded':
@@ -73,7 +73,13 @@ export const Graphic = ({
         height="41"
         href={status === 'invalidated' ? cross : logos.SwingbyFlat}
       />
-      <image x="203" y="7" width="41" height="41" href={logoTo} />
+      <image
+        x="203"
+        y="7"
+        width="41"
+        height="41"
+        href={/refund/.test(status) ? logoFrom : logoTo}
+      />
 
       <circle
         cx="27.5"
