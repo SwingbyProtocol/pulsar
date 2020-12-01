@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import { Meta } from '@storybook/react';
 import { rem } from 'polished';
 
-import { SwapProgress, STATUSES } from './';
+import { STATUSES } from './statuses';
+
+import { SwapProgress } from './';
 
 const meta: Meta = {
   title: 'SwapProgress',
@@ -15,7 +17,10 @@ export default meta;
 export const Default = () => (
   <Container>
     {STATUSES.map((status) => (
-      <SwapProgress currencyIn="BTC" currencyOut="WBTC" status={status} key={status} />
+      <div>
+        <Label>{status}:</Label>
+        <SwapProgress currencyIn="BTC" currencyOut="WBTC" status={status} key={status} />
+      </div>
     ))}
   </Container>
 );
@@ -30,4 +35,9 @@ const Container = styled.div`
   > *:not(:last-child) {
     margin-bottom: 1em;
   }
+`;
+
+const Label = styled.div`
+  font-size: ${({ theme }) => rem(theme.pulsar.size.room)};
+  margin-bottom: 1em;
 `;
