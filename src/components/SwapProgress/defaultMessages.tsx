@@ -10,7 +10,7 @@ const values: { [k: string]: Messages } = {
     'signing-refund': 'Signing your refund…',
     'sending-refund': 'Refunding to your address…',
     refunded: 'Refund completed!',
-    invalidated: 'Swap invalidated',
+    invalidated: 'Swap expired',
   },
 };
 
