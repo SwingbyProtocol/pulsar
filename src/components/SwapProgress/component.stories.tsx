@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import { Meta } from '@storybook/react';
 import { rem } from 'polished';
 
-import { SwapProgress, STATUSES } from './';
+import { STATUSES } from './statuses';
+
+import { SwapProgress } from './';
 
 const meta: Meta = {
   title: 'SwapProgress',
@@ -15,7 +17,13 @@ export default meta;
 export const Default = () => (
   <Container>
     {STATUSES.map((status) => (
-      <SwapProgress currencyIn="BTC" currencyOut="WBTC" status={status} key={status} />
+      <SwapProgress
+        messages={SwapProgress.defaultMessages({ locale: 'en' })}
+        currencyIn="BTC"
+        currencyOut="WBTC"
+        status={status}
+        key={status}
+      />
     ))}
   </Container>
 );
