@@ -39,11 +39,13 @@ export const PulsarLight = {
       success: {
         normal: '#31d5b8',
         active: '#21a68e',
+        text: '#fff',
       },
 
       danger: {
         normal: '#d14c40',
         active: '#d14c40',
+        text: '#fff',
       },
     },
 
