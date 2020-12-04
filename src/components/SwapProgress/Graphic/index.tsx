@@ -78,7 +78,7 @@ export const Graphic = ({
         y="7"
         width="41"
         height="41"
-        href={/refund/.test(status) ? logoFrom : logoTo}
+        href={/refund/i.test(status) ? logoFrom : logoTo}
       />
 
       <circle
