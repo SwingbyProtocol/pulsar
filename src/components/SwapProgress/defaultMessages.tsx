@@ -2,15 +2,15 @@ import type { Messages } from './component';
 
 const values: { [k: string]: Messages } = {
   en: {
-    waiting: 'Waiting for your deposit…',
-    pending: 'Processing your swap…',
-    signing: 'Signing your swap…',
-    sending: 'Sending to your address…',
-    completed: 'Swap completed!',
-    'signing-refund': 'Signing your refund…',
-    'sending-refund': 'Refunding to your address…',
-    refunded: 'Refund completed!',
-    invalidated: 'Swap expired',
+    WAITING: 'Waiting for your deposit…',
+    PENDING: 'Processing your swap…',
+    SIGNING: 'Signing your swap…',
+    SENDING: 'Sending to your address…',
+    COMPLETED: 'Swap completed!',
+    SIGNING_REFUND: 'Signing your refund…',
+    SENDING_REFUND: 'Refunding to your address…',
+    REFUNDED: 'Refund completed!',
+    EXPIRED: 'Swap expired',
   },
 };
 

@@ -1,12 +1,12 @@
 export const STATUSES = [
-  'waiting',
-  'pending',
-  'signing',
-  'sending',
-  'completed',
-  'signing-refund',
-  'sending-refund',
-  'refunded',
-  'invalidated',
+  'WAITING',
+  'PENDING',
+  'SIGNING',
+  'SENDING',
+  'COMPLETED',
+  'SIGNING_REFUND',
+  'SENDING_REFUND',
+  'REFUNDED',
+  'EXPIRED',
 ] as const;
 export type Status = typeof STATUSES[number];

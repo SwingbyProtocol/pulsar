@@ -24,26 +24,26 @@ export const Graphic = ({
 
   const progress = (() => {
     switch (status) {
-      case 'invalidated':
+      case 'EXPIRED':
         return -1;
-      case 'waiting':
+      case 'WAITING':
         return 0;
-      case 'pending':
-      case 'signing':
-      case 'signing-refund':
+      case 'PENDING':
+      case 'SIGNING':
+      case 'SIGNING_REFUND':
         return 1;
-      case 'sending':
-      case 'sending-refund':
+      case 'SENDING':
+      case 'SENDING_REFUND':
         return 2;
-      case 'completed':
-      case 'refunded':
+      case 'COMPLETED':
+      case 'REFUNDED':
         return 3;
     }
   })();
 
   const pendingColor = useMemo(() => {
     switch (status) {
-      case 'invalidated':
+      case 'EXPIRED':
         return theme.pulsar.color.danger.normal;
       default:
         return theme.pulsar.color.border.normal;
@@ -52,11 +52,11 @@ export const Graphic = ({
 
   const completedColor = useMemo(() => {
     switch (status) {
-      case 'signing-refund':
-      case 'sending-refund':
-      case 'refunded':
+      case 'SIGNING_REFUND':
+      case 'SENDING_REFUND':
+      case 'REFUNDED':
         return theme.pulsar.color.secondary.normal;
-      case 'invalidated':
+      case 'EXPIRED':
         return theme.pulsar.color.danger.normal;
       default:
         return theme.pulsar.color.primary.normal;
@@ -71,7 +71,7 @@ export const Graphic = ({
         y="7"
         width="41"
         height="41"
-        href={status === 'invalidated' ? cross : logos.SwingbyFlat}
+        href={status === 'EXPIRED' ? cross : logos.SwingbyFlat}
       />
       <image
         x="203"
@@ -88,7 +88,7 @@ export const Graphic = ({
         stroke={progress >= 0 ? completedColor : pendingColor}
         strokeWidth="2"
       />
-      {status !== 'invalidated' && (
+      {status !== 'EXPIRED' && (
         <>
           <rect
             x="53"
@@ -107,7 +107,7 @@ export const Graphic = ({
         </>
       )}
 
-      {status === 'invalidated' && (
+      {status === 'EXPIRED' && (
         <>
           <path d="M81.2682 27H99V29H81.2682V27Z" fill={completedColor} />
           <path d="M53 27H72.7829V29H53V27Z" fill={completedColor} />
