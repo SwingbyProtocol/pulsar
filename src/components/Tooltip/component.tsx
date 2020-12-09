@@ -27,6 +27,7 @@ export type Props = Pick<React.HTMLProps<HTMLElement>, 'children' | 'style'> &
   };
 
 export const Component = ({
+  visible,
   className,
   trigger: triggerProp = ['mouseenter', 'focus'],
   'data-testid': testId,
@@ -35,10 +36,10 @@ export const Component = ({
   const { buildTestId } = useBuildTestId({ id: testId });
 
   const trigger = useMemo(() => {
-    if (!triggerProp) return undefined;
+    if (!triggerProp || visible) return undefined;
     if (!Array.isArray(triggerProp)) return triggerProp;
     return triggerProp.join(' ');
-  }, [triggerProp]);
+  }, [triggerProp, visible]);
 
   return (
     <>
@@ -48,6 +49,7 @@ export const Component = ({
         trigger={trigger}
         theme="sb-pulsar-bare"
         arrow={false}
+        visible={visible}
         animation="shift-away"
         placement={otherProps.placement ?? 'bottom-start'}
         content={
