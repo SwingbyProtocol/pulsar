@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { animated, useTransition } from 'react-spring';
 
-import { Testable } from '../../modules/testing';
+import { Testable, useBuildTestId } from '../../modules/testing';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
 
@@ -14,7 +14,8 @@ type Props = Testable & {
   onClose?: () => void;
 };
 
-export const Component = ({ open, children, className, onClose }: Props) => {
+export const Component = ({ open, children, className, onClose, 'data-testid': testId }: Props) => {
+  const { buildTestId } = useBuildTestId({ id: testId });
   const box = useRef<HTMLDivElement | null>(null);
 
   const containerTransitions = useTransition(open, null, {
@@ -30,7 +31,7 @@ export const Component = ({ open, children, className, onClose }: Props) => {
   });
 
   useEffect(() => {
-    if (typeof window === 'undefined' || !onClose) return;
+    if (typeof window === 'undefined' || !onClose || !open) return;
 
     const listener = (evt: WindowEventMap['click']) => {
       if (!box.current || !evt.target) return;
@@ -41,7 +42,7 @@ export const Component = ({ open, children, className, onClose }: Props) => {
 
     window.addEventListener('click', listener);
     return () => window.removeEventListener('click', listener);
-  }, [onClose]);
+  }, [open, onClose]);
 
   return (
     <>
@@ -52,7 +53,14 @@ export const Component = ({ open, children, className, onClose }: Props) => {
               {boxTransitions.map(
                 ({ item, key, props }) =>
                   item && (
-                    <Box as={animated.div} key={key} style={props} className={className} ref={box}>
+                    <Box
+                      as={animated.div}
+                      key={key}
+                      style={props}
+                      className={className}
+                      ref={box}
+                      data-testid={buildTestId('')}
+                    >
                       {onClose && (
                         <CloseButton>
                           <Button
@@ -60,6 +68,7 @@ export const Component = ({ open, children, className, onClose }: Props) => {
                             size="street"
                             shape="circle"
                             onClick={onClose}
+                            data-testid={buildTestId('close-btn')}
                           >
                             <Icon.Cross />
                           </Button>

@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Meta } from '@storybook/react';
 import styled from 'styled-components';
+
+import { Button } from '../Button';
 
 import { Modal } from './';
 
@@ -20,7 +22,30 @@ export const Default = () => (
   </Container>
 );
 
+export const Test = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <Container>
+      <Button
+        variant="primary"
+        size="country"
+        shape="fit"
+        onClick={() => setOpen(true)}
+        data-testid="open"
+      >
+        Show
+      </Button>
+      <Modal open={open} onClose={() => setOpen(false)} data-testid="modal">
+        <Modal.Content>Some content here</Modal.Content>
+      </Modal>
+    </Container>
+  );
+};
+
 const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
   // From: https://codepen.io/karaWhiteDragon/pen/zYGGMya
   background-color: #66a3ff;
