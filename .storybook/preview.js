@@ -28,31 +28,34 @@ const Section = styled.div`
 `;
 
 export const decorators = [
-  (Story) => (
-    <Container>
-      <PulsarThemeProvider theme="light">
-        <Section>
-          <PulsarTestIdProvider value="light">
-            <Story />
-          </PulsarTestIdProvider>
-        </Section>
-      </PulsarThemeProvider>
-      <PulsarThemeProvider theme="dark">
-        <Section>
-          <PulsarTestIdProvider value="dark">
-            <Story />
-          </PulsarTestIdProvider>
-        </Section>
-      </PulsarThemeProvider>
-      <PulsarThemeProvider theme="accent">
-        <Section>
-          <PulsarTestIdProvider value="accent">
-            <Story />
-          </PulsarTestIdProvider>
-        </Section>
-      </PulsarThemeProvider>
-    </Container>
-  ),
+  (Story, { parameters: { skipThemeMerging } }) => {
+    if (skipThemeMerging) return <Story />;
+    return (
+      <Container>
+        <PulsarThemeProvider theme="light">
+          <Section>
+            <PulsarTestIdProvider value="light">
+              <Story />
+            </PulsarTestIdProvider>
+          </Section>
+        </PulsarThemeProvider>
+        <PulsarThemeProvider theme="dark">
+          <Section>
+            <PulsarTestIdProvider value="dark">
+              <Story />
+            </PulsarTestIdProvider>
+          </Section>
+        </PulsarThemeProvider>
+        <PulsarThemeProvider theme="accent">
+          <Section>
+            <PulsarTestIdProvider value="accent">
+              <Story />
+            </PulsarTestIdProvider>
+          </Section>
+        </PulsarThemeProvider>
+      </Container>
+    );
+  },
   (Story) => (
     <PulsarThemeProvider>
       <PulsarGlobalStyles />
