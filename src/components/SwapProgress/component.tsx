@@ -25,7 +25,7 @@ export const SwapProgress = ({
   const { buildTestId } = useBuildTestId({ id: testId });
   return (
     <Container className={className} data-testid={buildTestId('')}>
-      {messages && <Text>{messages[status]}</Text>}
+      {messages && <Text dangerouslySetInnerHTML={{ __html: messages[status] }} />}
       <Graphic status={status} currencyIn={currencyIn} currencyOut={currencyOut} />
     </Container>
   );

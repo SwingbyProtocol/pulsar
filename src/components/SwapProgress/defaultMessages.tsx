@@ -3,7 +3,7 @@ import type { Messages } from './component';
 const values: { [k: string]: Messages } = {
   en: {
     WAITING: 'Waiting for your deposit…',
-    PENDING: 'Processing your swap…',
+    PENDING: 'Transaction found.<br />Waiting for confirmations…',
     SIGNING: 'Signing your swap…',
     SENDING: 'Sending to your address…',
     COMPLETED: 'Swap completed!',
