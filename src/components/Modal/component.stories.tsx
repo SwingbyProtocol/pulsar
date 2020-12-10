@@ -14,7 +14,9 @@ export default meta;
 
 export const Default = () => (
   <Container>
-    <Modal open={true} />
+    <Modal open={true} onClose={() => {}}>
+      <Modal.Content>Some content here</Modal.Content>
+    </Modal>
   </Container>
 );
 
