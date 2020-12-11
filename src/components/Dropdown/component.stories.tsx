@@ -1,4 +1,5 @@
 import { Meta } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -18,16 +19,19 @@ export const Bare = () => {
 export const WithHelpers = () => {
   const content = (
     <>
-      <Dropdown.Item>Item 1</Dropdown.Item>
-      <Dropdown.Item htmlTag="a">Item 2</Dropdown.Item>
+      <Dropdown.Item onClick={action('click-item-1')}>Item 1</Dropdown.Item>
+      <Dropdown.Item htmlTag="a" onClick={action('click-item-2')}>
+        Item 2
+      </Dropdown.Item>
       <Dropdown.Divider />
-      <Dropdown.Item>Item 3</Dropdown.Item>
+      <Dropdown.Item onClick={action('click-item-3')}>Item 3</Dropdown.Item>
       <Dropdown.Divider />
-      <Dropdown.Item selected>Selected item</Dropdown.Item>
-      <Dropdown.Item disabled>Disabled item</Dropdown.Item>
-      <Dropdown.Item disabled>Disabled accent item</Dropdown.Item>
-      <Dropdown.Divider />
-      <Dropdown.Item interactive={false}>Non-interactive item</Dropdown.Item>
+      <Dropdown.Item selected onClick={action('click-item-4')}>
+        Selected item
+      </Dropdown.Item>
+      <Dropdown.Item disabled onClick={action('click-item-5')}>
+        Disabled item
+      </Dropdown.Item>
     </>
   );
 
