@@ -13,6 +13,8 @@ export const getCoinLogo = ({ symbol }: { symbol: string }) => {
     case 'BTCE':
     case 'WBTC':
       return logos.CoinWbtc;
+    case 'sbBTC':
+      return logos.CoinSbbtc;
     default:
       return undefined;
   }
