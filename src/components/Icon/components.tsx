@@ -27,11 +27,13 @@ export { ReactComponent as NetworkValidators } from './assets/NetworkValidators.
 export { ReactComponent as NetworkVolume } from './assets/NetworkVolume.svg';
 export { ReactComponent as Paste } from './assets/Paste.svg';
 export { ReactComponent as Pinterest } from './assets/Pinterest.svg';
+export { ReactComponent as Reddit } from './assets/Reddit.svg';
 export { ReactComponent as Search } from './assets/Search.svg';
 export { ReactComponent as SwapHorizontal } from './assets/SwapHorizontal.svg';
 export { ReactComponent as SwapVertical } from './assets/SwapVertical.svg';
 export { ReactComponent as Swingby } from './assets/Swingby.svg';
 export { ReactComponent as SwingbyWithName } from './assets/SwingbyWithName.svg';
+export { ReactComponent as Telegram } from './assets/Telegram.svg';
 export { ReactComponent as Tick } from './assets/Tick.svg';
 export { ReactComponent as TickCircle } from './assets/TickCircle.svg';
 export { ReactComponent as Twitter } from './assets/Twitter.svg';
