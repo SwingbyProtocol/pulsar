@@ -15,6 +15,7 @@ export { ReactComponent as Ellipsis } from './assets/Ellipsis.svg';
 export { ReactComponent as ExternalLink } from './assets/ExternalLink.svg';
 export { ReactComponent as Facebook } from './assets/Facebook.svg';
 export { ReactComponent as Filter } from './assets/Filter.svg';
+export { ReactComponent as GitHub } from './assets/GitHub.svg';
 export { ReactComponent as Hamburger } from './assets/Hamburger.svg';
 export { ReactComponent as InfoCircle } from './assets/InfoCircle.svg';
 export { ReactComponent as Instagram } from './assets/Instagram.svg';
