@@ -36,20 +36,24 @@ export const Component = ({
   const { buildTestId } = useBuildTestId({ id: testId });
 
   const trigger = useMemo(() => {
-    if (!triggerProp || visible) return undefined;
+    if (!triggerProp) return undefined;
     if (!Array.isArray(triggerProp)) return triggerProp;
     return triggerProp.join(' ');
-  }, [triggerProp, visible]);
+  }, [triggerProp]);
+
+  const triggerVisible = useMemo(() => {
+    if (typeof visible !== undefined) return { visible };
+    return { trigger };
+  }, [trigger, visible]);
 
   return (
     <>
       <Styles />
       <Tippy
         {...otherProps}
-        trigger={trigger}
+        {...triggerVisible}
         theme="sb-pulsar-bare"
         arrow={false}
-        visible={visible}
         animation="shift-away"
         placement={otherProps.placement ?? 'bottom-start'}
         content={
