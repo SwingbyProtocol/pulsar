@@ -1,6 +1,5 @@
 import React from 'react';
 import OriginalQRCode from 'qrcode.react';
-import { useTheme } from 'styled-components';
 
 import { Container, QRWrapper } from './styled';
 
@@ -11,7 +10,6 @@ export type Props = {
 };
 
 export const QRCode = ({ value, className, style }: Props) => {
-  const theme = useTheme();
   return (
     <Container className={className} style={style}>
       <QRWrapper>
@@ -20,8 +18,8 @@ export const QRCode = ({ value, className, style }: Props) => {
           size={100}
           level="M"
           renderAs="svg"
-          bgColor={theme.pulsar.color.bg.normal}
-          fgColor={theme.pulsar.color.text.normal}
+          bgColor="transparent"
+          fgColor="currentColor"
         />
       </QRWrapper>
     </Container>
