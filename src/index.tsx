@@ -16,6 +16,7 @@ export { Icon } from './components/Icon';
 export { ListItem } from './components/ListItem';
 export { Loading } from './components/Loading';
 export { Modal } from './components/Modal';
+export { QRCode } from './components/QRCode';
 export { StatusIcon } from './components/StatusIcon';
 export { SwapProgress } from './components/SwapProgress';
 export { Text } from './components/Text';
