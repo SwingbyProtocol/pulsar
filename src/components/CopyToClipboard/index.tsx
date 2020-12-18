@@ -24,9 +24,18 @@ export const CopyToClipboard = ({
 }: Props) => {
   const { buildTestId } = useBuildTestId({ id: testId });
 
-  const copy = useCallback(() => {
-    if (typeof navigator === 'undefined') return;
-    navigator.clipboard.writeText(value);
+  const copy = useCallback(async () => {
+    try {
+      // @ts-expect-error
+      const { state } = await navigator.permissions.query({ name: 'clipboard-write' });
+      if (state === 'granted' || state === 'prompt') {
+        navigator.clipboard.writeText(value);
+      }
+    } catch (e) {
+      try {
+        navigator.clipboard.writeText(value);
+      } catch (e) {}
+    }
   }, [value]);
 
   return (
