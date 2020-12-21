@@ -14,7 +14,7 @@ export const PulsarDark: PulsarThemeType = {
       bg: {
         normal: '#0f1621',
         masked: '#1c232f',
-        hover: '#f00',
+        hover: '#202736',
         transparent: 'rgba(15, 22, 34, 0.92)',
       },
 
@@ -22,13 +22,12 @@ export const PulsarDark: PulsarThemeType = {
         normal: '#f2f2f2',
         masked: '#ccc',
         accent: '#fff',
-        disabled: '#f00',
         placeholder: '#818994',
       },
 
       border: {
         normal: '#353f4c',
-        danger: '#fc012a',
+        danger: '#ffc2c4',
       },
     },
 
