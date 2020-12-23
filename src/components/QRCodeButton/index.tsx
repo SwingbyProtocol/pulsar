@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from 'react';
 
 import { Button } from '../Button';
+import { Icon } from '../Icon';
 import { Modal } from '../Modal';
 import { QRCode } from '../QRCode';
 
@@ -20,7 +21,7 @@ export const QRCodeButton = ({ value, size, variant, shape }: Props) => {
   return (
     <>
       <Button variant={variant} size={size} shape={shape} onClick={open}>
-        <QRCode value="" />
+        <Icon.QR />
       </Button>
       <Modal open={isOpen} onClose={close}>
         <QRContainer>
