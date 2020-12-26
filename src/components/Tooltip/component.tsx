@@ -3,7 +3,7 @@ import Tippy from '@tippyjs/react';
 
 import { Testable, useBuildTestId } from '../../modules/testing';
 
-import { Styles, ContentContainer } from './styled';
+import { Styles, ContentContainer, Target } from './styled';
 
 export type TriggerValue = 'mouseenter' | 'focus' | 'click' | 'manual';
 
@@ -24,6 +24,7 @@ export type Props = Pick<React.HTMLProps<HTMLElement>, 'children' | 'style'> &
   Testable & {
     content: React.ReactNode;
     trigger?: TriggerValue | TriggerValue[];
+    targetHtmlTag?: NonNullable<keyof React.ReactHTML>;
   };
 
 export const Component = ({
@@ -31,6 +32,7 @@ export const Component = ({
   className,
   trigger: triggerProp = ['mouseenter', 'focus'],
   'data-testid': testId,
+  targetHtmlTag = 'div',
   ...otherProps
 }: Props) => {
   const { buildTestId } = useBuildTestId({ id: testId });
@@ -62,9 +64,9 @@ export const Component = ({
           </ContentContainer>
         }
       >
-        <div className={className} data-testid={buildTestId('target')}>
+        <Target className={className} data-testid={buildTestId('target')} as={targetHtmlTag}>
           {otherProps.children}
-        </div>
+        </Target>
       </Tippy>
     </>
   );

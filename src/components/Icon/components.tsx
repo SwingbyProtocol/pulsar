@@ -27,6 +27,7 @@ export { ReactComponent as NetworkValidators } from './assets/NetworkValidators.
 export { ReactComponent as NetworkVolume } from './assets/NetworkVolume.svg';
 export { ReactComponent as Paste } from './assets/Paste.svg';
 export { ReactComponent as Pinterest } from './assets/Pinterest.svg';
+export { ReactComponent as QR } from './assets/QR.svg';
 export { ReactComponent as Reddit } from './assets/Reddit.svg';
 export { ReactComponent as Search } from './assets/Search.svg';
 export { ReactComponent as SwapHorizontal } from './assets/SwapHorizontal.svg';

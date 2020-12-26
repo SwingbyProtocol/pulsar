@@ -39,3 +39,5 @@ export const Content = styled.div`
   padding: ${({ theme }) => em(theme.pulsar.size.box, theme.pulsar.size.room)}
     ${({ theme }) => em(theme.pulsar.size.box, theme.pulsar.size.room)};
 `;
+
+export const Target = styled.div``;
