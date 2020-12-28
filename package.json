@@ -13,73 +13,84 @@
     "access": "public"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
   "scripts": {
     "dev": "start-storybook -p 6006",
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
+    "lint": "eslint .",
     "size": "size-limit",
     "analyze": "size-limit --why",
     "format": "prettier --write '**/*.{js,jsx,ts,tsx,css,json,md,mdx,html}'"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "tsdx lint"
+      "pre-commit": "yarn lint"
     }
-  },
-  "prettier": {
-    "arrowParens": "always",
-    "printWidth": 100,
-    "proseWrap": "always",
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "all"
   },
   "size-limit": [
     {
-      "path": "dist/swingby-components.cjs.production.min.js",
-      "limit": "10 KB"
+      "path": "dist/pulsar.cjs.production.min.js"
     },
     {
-      "path": "dist/swingby-components.esm.js",
-      "limit": "10 KB"
+      "path": "dist/pulsar.esm.js"
     }
   ],
+  "dependencies": {
+    "@tippyjs/react": "^4.2.0",
+    "nanoid": "3.1.18",
+    "qrcode.react": "^1.0.0"
+  },
   "peerDependencies": {
-    "react": ">=16"
+    "@types/styled-components": "^5.1.0",
+    "polished": "^4.0.0",
+    "react": ">=16",
+    "react-spring": "^8.0.0",
+    "styled-components": "^5.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.3",
+    "@babel/core": "^7.12.7",
     "@percy/cypress": "^2.3.2",
-    "@size-limit/preset-small-lib": "^4.6.2",
-    "@storybook/addon-essentials": "^6.0.26",
+    "@rollup/plugin-url": "^5.0.1",
+    "@size-limit/preset-big-lib": "^4.9.0",
+    "@storybook/addon-essentials": "^6.1.2",
     "@storybook/addon-info": "^5.3.21",
-    "@storybook/addon-links": "^6.0.26",
-    "@storybook/addons": "^6.0.26",
-    "@storybook/react": "^6.0.26",
-    "@types/react": "^16.9.53",
-    "@types/react-dom": "^16.9.8",
+    "@storybook/addon-links": "^6.1.2",
+    "@storybook/addons": "^6.1.2",
+    "@storybook/react": "^6.1.2",
+    "@svgr/rollup": "^5.5.0",
+    "@svgr/webpack": "^5.5.0",
+    "@swingby-protocol/eslint-config": "^1.2.0",
+    "@swingby-protocol/prettier-config": "^1.0.2",
+    "@swingby-protocol/sdk": "^1.0.0-alpha.10",
+    "@types/qrcode.react": "^1.0.1",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
     "@types/styled-components": "^5.1.4",
-    "babel-loader": "^8.1.0",
-    "cypress": "^5.4.0",
+    "@typescript-eslint/eslint-plugin": "4.8.1",
+    "babel-loader": "^8.2.1",
+    "cypress": "^5.6.0",
     "husky": "^4.3.0",
-    "prettier": "^2.1.2",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0",
-    "react-is": "^17.0.0",
-    "rollup-plugin-css-only": "^2.1.0",
-    "semantic-release": "^17.2.1",
-    "size-limit": "^4.6.2",
+    "polished": "^4.0.4",
+    "prettier": "^2.2.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-is": "^17.0.1",
+    "react-spring": "^8.0.27",
+    "rollup-plugin-css-only": "^3.0.0",
+    "rollup-plugin-string": "^3.0.0",
+    "semantic-release": "^17.3.0",
+    "size-limit": "^4.9.0",
+    "styled-components": "^5.2.1",
     "tsdx": "^0.14.1",
     "tslib": "^2.0.3",
-    "typescript": "^4.0.3"
+    "typescript": "^4.1.2"
   },
-  "dependencies": {
-    "polished": "^4.0.3",
-    "react-spring": "^8.0.27",
-    "styled-components": "^5.2.0"
+  "resolutions": {
+    "**/react": "17.0.1",
+    "**/@typescript-eslint/eslint-plugin": "4.8.1",
+    "**/nanoid": "3.1.18"
   }
 }

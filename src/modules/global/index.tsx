@@ -1,21 +1,13 @@
-import React from 'react';
 import { createGlobalStyle as css } from 'styled-components';
 
-import { PulsarGlobalAutoTheming } from '../themes';
+export const PulsarGlobalStyles = css`
+  @import url('https://rsms.me/inter/inter.css');
 
-export const PulsarGlobalStyles = () => (
-  <>
-    <PulsarGlobalAutoTheming />
-    <Styles />
-  </>
-);
-
-const Styles = css`
   :root {
     box-sizing: border-box;
-    background: var(--sbpulsar-color-bg-normal);
-    color: var(--sbpulsar-color-color-normal);
-    font-family: -apple-system, '.SFNSText-Regular', 'San Francisco', BlinkMacSystemFont,
+    background: ${({ theme }) => theme.pulsar.color.bg.normal};
+    color: ${({ theme }) => theme.pulsar.color.text.normal};
+    font-family: 'Inter', -apple-system, '.SFNSText-Regular', 'San Francisco', BlinkMacSystemFont,
       '.PingFang-SC-Regular', 'Microsoft YaHei', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial,
       sans-serif;
   }

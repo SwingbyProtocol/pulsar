@@ -1,8 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Meta } from '@storybook/react';
+
+import { Icon } from '../Icon';
+
+import { SIZES, SHAPES, Variant } from './styles';
+
 import { Button } from './';
-import { SIZES } from './styles';
 
 const meta: Meta = {
   title: 'Button',
@@ -11,25 +15,37 @@ const meta: Meta = {
 
 export default meta;
 
-export const Primary = () => (
+const DISABLED = [false, true] as const;
+const HREF = [undefined, 'https://swingby.network'] as const;
+
+const Common = ({ variant }: { variant: Variant }) => (
   <Container>
-    {SIZES.map((size) => (
-      <Button variant="primary" size={size}>
-        A button (size={size})
-      </Button>
-    ))}
+    {HREF.map((href) =>
+      SHAPES.map((shape) =>
+        SIZES.map((size) =>
+          DISABLED.map((disabled) => (
+            <Button
+              variant={variant}
+              size={size}
+              key={`${href}-${shape}-${size}`}
+              shape={shape}
+              disabled={disabled}
+              href={href}
+            >
+              {shape === 'fill' || shape === 'fit' ? `A button (size=${size})` : <Icon.Search />}
+            </Button>
+          )),
+        ),
+      ),
+    )}
   </Container>
 );
 
-export const Secondary = () => (
-  <Container>
-    {SIZES.map((size) => (
-      <Button variant="secondary" size={size}>
-        A button (size={size})
-      </Button>
-    ))}
-  </Container>
-);
+export const Primary = () => <Common variant="primary" />;
+
+export const Secondary = () => <Common variant="secondary" />;
+
+export const Tertiary = () => <Common variant="tertiary" />;
 
 const Container = styled.div`
   > *:not(:last-child) {
