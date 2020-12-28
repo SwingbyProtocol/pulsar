@@ -1,4 +1,4 @@
-<p align="center"><img src="https://raw.githubusercontent.com/SwingbyProtocol/pulsar/alpha/docs/logo.png" height="100" alt="Pulsar" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/SwingbyProtocol/pulsar/master/docs/logo.png" height="100" alt="Pulsar" /></p>
 
 Pulsar is a library of [React](https://reactjs.org/) components built with
 [styled-components](https://www.styled-components.com/).
@@ -8,7 +8,7 @@ Pulsar is a library of [React](https://reactjs.org/) components built with
 1. Install this library with:
 
    ```bash
-   yarn add @swingby-protocol/pulsar@alpha react-spring styled-components polished
+   yarn add @swingby-protocol/pulsar react-spring styled-components polished
    yarn add --dev @types/styled-components
    ```
 
