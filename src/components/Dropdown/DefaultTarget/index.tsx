@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { Context } from '../context';
 import { Icon } from '../../Icon';
 
-import { StyledDefaultTarget, Container, IconContainer, Variant, Size } from './styled';
+import { StyledDefaultTarget, Container, IconContainer, Variant, Size, Space } from './styled';
 
 export const DefaultTarget = ({
   variant = 'transparent',
@@ -18,6 +18,7 @@ export const DefaultTarget = ({
   return (
     <StyledDefaultTarget {...props} variant={variant} isShowing={isShowing} as="button">
       <Container>{props.children}</Container>
+      {variant === 'input' && <Space />}
       <IconContainer>{isShowing ? <Icon.CaretUp /> : <Icon.CaretDown />}</IconContainer>
     </StyledDefaultTarget>
   );
