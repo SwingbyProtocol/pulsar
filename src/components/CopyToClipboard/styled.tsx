@@ -22,6 +22,7 @@ export const Container = styled(Button)<{ innerVariant: Variant }>`
   border-radius: ${({ theme }) => em(theme.pulsar.size.box)};
   padding: 0 ${({ theme }) => em(theme.pulsar.size.closet)};
   position: relative;
+  flex-shrink: 1;
 
   ${({ innerVariant }) => innerVariant === 'normal' && notAccent};
 `;
