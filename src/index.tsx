@@ -1,5 +1,5 @@
 export { PulsarTheme, PulsarThemeProvider, PulsarThemeType } from './modules/themes';
-export { PulsarGlobalStyles } from './modules/global';
+export { PulsarGlobalStyles, PULSAR_GLOBAL_FONT_HREF } from './modules/global';
 export { logos, getCoinLogo } from './modules/logos';
 export { getCryptoAssetFormatter, getFiatAssetFormatter } from './modules/intl';
 export { useMatchMedia } from './modules/match-media';

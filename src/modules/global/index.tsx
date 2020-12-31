@@ -1,5 +1,7 @@
 import { createGlobalStyle as css } from 'styled-components';
 
+export const PULSAR_GLOBAL_FONT_HREF = 'https://rsms.me/inter/inter.css';
+
 export const PulsarGlobalStyles = css`
   :root {
     box-sizing: border-box;

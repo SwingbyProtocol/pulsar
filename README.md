@@ -22,6 +22,10 @@ Pulsar is a library of [React](https://reactjs.org/) components built with
    export const MyApp = () => {
      return (
        <PulsarThemeProvider>
+         {/* Optional, to load the Inter font with `next/head`, `react-helmet`, etc. */}
+         <Head>
+           <link rel="stylesheet" href={PULSAR_GLOBAL_FONT_HREF} />
+         </Head>
          <PulsarGlobalStyles /> {/* Optional */}
          <h1>My cool app</h1>
          <Button variant="primary" size="country">
