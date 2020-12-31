@@ -1,8 +1,8 @@
 import { createGlobalStyle as css } from 'styled-components';
 
-export const PulsarGlobalStyles = css`
-  @import url('https://rsms.me/inter/inter.css');
+export const PULSAR_GLOBAL_FONT_HREF = 'https://rsms.me/inter/inter.css';
 
+export const PulsarGlobalStyles = css`
   :root {
     box-sizing: border-box;
     background: ${({ theme }) => theme.pulsar.color.bg.normal};
