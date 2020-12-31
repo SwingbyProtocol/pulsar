@@ -17,6 +17,7 @@ const inputShowing = css<{ isShowing: boolean }>`
 const input = css<{ isShowing: boolean }>`
   border: 2px solid ${({ theme }) => theme.pulsar.components.input.idle.border};
   border-radius: ${({ theme }) => em(theme.pulsar.size.box)};
+  padding: 0 ${({ theme }) => em(theme.pulsar.size.closet)};
   ${({ isShowing }) => isShowing && inputShowing};
 `;
 
@@ -50,12 +51,16 @@ export const StyledDefaultTarget = styled.button<{
 
 export const Container = styled.div`
   ${reset};
-  flex-grow: 1;
+  flex-shrink: 1;
+`;
+
+export const Space = styled.div`
+  flex: 1;
 `;
 
 export const IconContainer = styled.div`
   display: flex;
   font-size: ${({ theme }) => em(theme.pulsar.size.drawer, theme.pulsar.size.room)};
-  margin: 0 ${({ theme }) => em(theme.pulsar.size.house, theme.pulsar.size.drawer)};
+  margin-left: ${({ theme }) => em(theme.pulsar.size.box, theme.pulsar.size.drawer)};
   color: ${({ theme }) => theme.pulsar.color.primary.normal};
 `;

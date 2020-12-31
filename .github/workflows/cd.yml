@@ -28,7 +28,7 @@ jobs:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
       - name: Deploy to GitHub Pages
-        if: github.ref == 'refs/heads/alpha'
+        if: github.ref == 'refs/heads/master'
         continue-on-error: true
         uses: maxheld83/ghpages@v0.3.0
         env:
