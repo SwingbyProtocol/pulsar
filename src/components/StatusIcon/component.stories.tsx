@@ -16,6 +16,7 @@ export const Default = () => (
     <StatusIcon variant="success" />
     <StatusIcon variant="danger" />
     <StatusIcon variant="warning" />
+    <StatusIcon variant="pending" />
   </Container>
 );
 

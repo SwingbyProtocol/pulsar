@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const VARIANTS = ['success', 'danger', 'warning'] as const;
+export const VARIANTS = ['success', 'danger', 'warning', 'pending'] as const;
 export type Variant = typeof VARIANTS[number];
 
 const success = css`
@@ -15,6 +15,10 @@ const warning = css`
   background: ${({ theme }) => theme.pulsar.color.text.masked};
 `;
 
+const pending = css`
+  background: ${({ theme }) => theme.pulsar.color.text.highlight};
+`;
+
 export const StyledStatusIcon = styled.div<{ variant: Variant }>`
   width: 1em;
   height: 1em;
@@ -24,4 +28,5 @@ export const StyledStatusIcon = styled.div<{ variant: Variant }>`
   ${({ variant }) => variant === 'success' && success};
   ${({ variant }) => variant === 'danger' && danger};
   ${({ variant }) => variant === 'warning' && warning};
+  ${({ variant }) => variant === 'pending' && pending};
 `;
