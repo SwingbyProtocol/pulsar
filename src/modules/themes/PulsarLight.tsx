@@ -46,6 +46,12 @@ export const PulsarLight = {
         active: '#d14c40',
         text: '#fff',
       },
+
+      warning: {
+        normal: '#ffbf00',
+        active: '#ffbf00',
+        text: '#2b374a',
+      },
     },
 
     size: {
