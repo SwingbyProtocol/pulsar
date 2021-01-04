@@ -1,12 +1,12 @@
 import React from 'react';
 
+import { SwapStatus } from '../../modules/swap-statuses';
 import { Testable, useBuildTestId } from '../../modules/testing';
 
 import { Graphic } from './Graphic';
-import { Status } from './statuses';
 import { Container, Text } from './styled';
 
-export type Messages = { [k in Status]: string };
+export type Messages = { [k in SwapStatus]: string };
 
 export const SwapProgress = ({
   status,
@@ -16,7 +16,7 @@ export const SwapProgress = ({
   'data-testid': testId,
   messages,
 }: Testable & {
-  status: Status;
+  status: SwapStatus;
   currencyIn: string;
   currencyOut: string;
   messages?: Messages;
