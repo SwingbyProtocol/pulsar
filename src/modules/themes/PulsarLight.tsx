@@ -14,7 +14,6 @@ export const PulsarLight = {
       text: {
         normal: '#4a5463',
         masked: '#818994',
-        highlight: '#ffbf00',
         accent: '#2b374a',
         placeholder: '#818994',
       },
@@ -46,6 +45,12 @@ export const PulsarLight = {
         normal: '#d14c40',
         active: '#d14c40',
         text: '#fff',
+      },
+
+      warning: {
+        normal: '#ffbf00',
+        active: '#ffbf00',
+        text: '#2b374a',
       },
     },
 

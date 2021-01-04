@@ -18,7 +18,7 @@ export { Loading } from './components/Loading';
 export { Modal } from './components/Modal';
 export { QRCode } from './components/QRCode';
 export { QRCodeButton } from './components/QRCodeButton';
-export { StatusIcon } from './components/StatusIcon';
+export { SwapStatusIcon } from './components/SwapStatusIcon';
 export { SwapProgress } from './components/SwapProgress';
 export { Text } from './components/Text';
 export { TextInput } from './components/TextInput';

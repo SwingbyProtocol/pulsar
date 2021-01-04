@@ -2,21 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 import { Meta } from '@storybook/react';
 
-import { StatusIcon } from './';
+import { SWAP_STATUSES } from '../../modules/swap-statuses';
+
+import { SwapStatusIcon } from '.';
 
 const meta: Meta = {
-  title: 'StatusIcon',
-  component: StatusIcon,
+  title: 'SwapStatusIcon',
+  component: SwapStatusIcon,
 };
 
 export default meta;
 
 export const Default = () => (
   <Container>
-    <StatusIcon variant="success" />
-    <StatusIcon variant="danger" />
-    <StatusIcon variant="warning" />
-    <StatusIcon variant="pending" />
+    {SWAP_STATUSES.map((status) => (
+      <SwapStatusIcon status={status} />
+    ))}
   </Container>
 );
 

@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { useTheme } from 'styled-components';
 
 import { getCoinLogo, logos } from '../../../modules/logos';
-import { Status } from '../statuses';
+import { getStatusColor, SwapStatus } from '../../../modules/swap-statuses';
 
 import cross from './cross.svg';
 import { Svg } from './styled';
@@ -13,19 +13,18 @@ export const Graphic = ({
   currencyOut,
   className,
 }: {
-  status: Status;
+  status: SwapStatus;
   currencyIn: string;
   currencyOut: string;
   className?: string;
 }) => {
-  const theme = useTheme();
   const logoFrom = useMemo(() => getCoinLogo({ symbol: currencyIn }), [currencyIn]);
   const logoTo = useMemo(() => getCoinLogo({ symbol: currencyOut }), [currencyOut]);
+  const theme = useTheme();
+  const pendingColor = theme.pulsar.color.border.normal;
 
   const progress = (() => {
     switch (status) {
-      case 'EXPIRED':
-        return -1;
       case 'WAITING':
         return 0;
       case 'PENDING':
@@ -38,28 +37,18 @@ export const Graphic = ({
       case 'COMPLETED':
       case 'REFUNDED':
         return 3;
+      case 'EXPIRED':
+        return 100;
     }
   })();
 
-  const pendingColor = useMemo(() => {
-    switch (status) {
-      case 'EXPIRED':
-        return theme.pulsar.color.danger.normal;
-      default:
-        return theme.pulsar.color.border.normal;
-    }
-  }, [theme, status]);
-
   const completedColor = useMemo(() => {
     switch (status) {
-      case 'SIGNING_REFUND':
-      case 'SENDING_REFUND':
-      case 'REFUNDED':
-        return theme.pulsar.color.secondary.normal;
-      case 'EXPIRED':
-        return theme.pulsar.color.danger.normal;
+      case 'PENDING':
+      case 'WAITING':
+        return getStatusColor({ theme, status: 'SENDING' });
       default:
-        return theme.pulsar.color.primary.normal;
+        return getStatusColor({ theme, status });
     }
   }, [theme, status]);
 

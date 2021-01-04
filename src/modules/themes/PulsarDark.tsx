@@ -21,7 +21,6 @@ export const PulsarDark: PulsarThemeType = {
       text: {
         normal: '#f2f2f2',
         masked: '#ccc',
-        highlight: '#ffbf00',
         accent: '#fff',
         placeholder: '#818994',
       },
