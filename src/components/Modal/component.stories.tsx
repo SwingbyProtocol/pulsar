@@ -9,7 +9,7 @@ import { Modal } from './';
 const meta: Meta = {
   title: 'Modal',
   component: Modal,
-  parameters: { skipThemeMerging: true },
+  parameters: { theme: 'auto' },
 };
 
 export default meta;

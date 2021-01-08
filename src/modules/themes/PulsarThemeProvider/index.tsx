@@ -6,7 +6,7 @@ import { PulsarDark } from '../PulsarDark';
 import { PulsarLight } from '../PulsarLight';
 import { useSystemTheme } from '../useSystemTheme';
 
-export type Theme = 'light' | 'dark' | 'accent';
+export type Theme = 'light' | 'dark' | 'accent' | 'auto';
 
 export type Props = {
   children?: React.ReactNode;
@@ -17,14 +17,14 @@ export type Props = {
 
 export const PulsarThemeProvider = ({
   children,
-  theme: themeProp,
+  theme: themeProp = 'auto',
   defaultTheme,
   localTheme,
 }: Props) => {
   const systemTheme = useSystemTheme({ defaultTheme });
 
   const theme = useMemo(() => {
-    const pulsarTheme = themeProp ?? systemTheme;
+    const pulsarTheme = themeProp === 'auto' ? systemTheme : themeProp ?? systemTheme;
     return {
       ...localTheme,
       ...(() => {

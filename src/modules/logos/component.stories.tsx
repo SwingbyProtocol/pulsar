@@ -7,6 +7,12 @@ export default {
   title: 'Logos',
 };
 
+const BgContainer = styled.div`
+  height: 100vh;
+  background-size: contain;
+  background-repeat: repeat;
+`;
+
 const Container = styled.div`
   display: flex;
   flex-direction: row;
@@ -34,3 +40,11 @@ export const Default = () => (
     })}
   </Container>
 );
+
+export const Stars = () => <BgContainer style={{ backgroundImage: `url(${logos.StarsBg})` }} />;
+export const StarsAnimated = () => (
+  <BgContainer style={{ backgroundImage: `url(${logos.StarsBgAnimated})` }} />
+);
+
+Stars.parameters = { theme: 'accent' };
+StarsAnimated.parameters = { theme: 'accent' };

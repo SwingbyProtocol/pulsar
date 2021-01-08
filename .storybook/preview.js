@@ -28,8 +28,8 @@ const Section = styled.div`
 `;
 
 export const decorators = [
-  (Story, { parameters: { skipThemeMerging } }) => {
-    if (skipThemeMerging) return <Story />;
+  (Story, { parameters: { theme } }) => {
+    if (!!theme) return <Story />;
     return (
       <Container>
         <PulsarThemeProvider theme="light">
@@ -56,8 +56,8 @@ export const decorators = [
       </Container>
     );
   },
-  (Story) => (
-    <PulsarThemeProvider>
+  (Story, { parameters: { theme } }) => (
+    <PulsarThemeProvider theme={theme}>
       <PulsarGlobalStyles />
       <Story />
     </PulsarThemeProvider>
