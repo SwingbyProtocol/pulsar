@@ -13,6 +13,7 @@ export const PulsarAccent: PulsarThemeType = {
 
       bg: {
         normal: '#1e293b',
+        accent: '#2f3a4b',
         masked: '#2f3a4b',
         hover: '#334057',
         transparent: 'rgba(15, 22, 34, 0.92)',
