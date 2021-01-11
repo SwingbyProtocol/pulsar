@@ -15,5 +15,7 @@ export const CoinIcon = ({ symbol, 'data-testid': testId, className }: Props) =>
     return <StyledPlaceholder className={className} data-testid={buildTestId('')} />;
   }
 
-  return <StyledCoinIcon src={icon} className={className} data-testid={buildTestId('')} />;
+  return (
+    <StyledCoinIcon src={icon} className={className} data-testid={buildTestId('')} alt={symbol} />
+  );
 };
