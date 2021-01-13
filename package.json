@@ -65,7 +65,6 @@
     "@svgr/webpack": "^5.5.0",
     "@swingby-protocol/eslint-config": "^1.2.0",
     "@swingby-protocol/prettier-config": "^1.0.2",
-    "@swingby-protocol/sdk": "^1.0.0-alpha.10",
     "@types/qrcode.react": "^1.0.1",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
