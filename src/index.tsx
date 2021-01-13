@@ -6,6 +6,7 @@ export { useMatchMedia } from './modules/match-media';
 export { reset } from './modules/reset';
 export { useBuildTestId, Testable } from './modules/testing';
 export { getStatusColor } from './modules/swap-statuses';
+export { PulsarToastContainer, createToast } from './modules/toasts';
 
 export { AppLogo } from './components/AppLogo';
 export { Button } from './components/Button';

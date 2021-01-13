@@ -1,8 +1,13 @@
 import { createGlobalStyle as css } from 'styled-components';
+import toastifyCss from 'react-toastify/dist/ReactToastify.css'; // eslint-disable-line import/no-internal-modules
+
+import { toastStyles } from '../toasts';
 
 export const PULSAR_GLOBAL_FONT_HREF = 'https://rsms.me/inter/inter.css';
 
 export const PulsarGlobalStyles = css`
+  ${toastifyCss};
+
   :root {
     box-sizing: border-box;
     background: ${({ theme }) => theme.pulsar.color.bg.normal};
@@ -24,4 +29,6 @@ export const PulsarGlobalStyles = css`
     box-sizing: inherit;
     font-family: inherit;
   }
+
+  ${toastStyles};
 `;
