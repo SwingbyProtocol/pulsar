@@ -12,14 +12,13 @@ const meta: Meta = {
 
 export default meta;
 
-export const Default = () => {
+const Common = () => {
   useEffect(() => {
-    createToast({ content: 'A toast', position: 'top-left' });
+    createToast({ content: 'A toast', type: 'default' });
     createToast({ content: 'A toast', type: 'success' });
     createToast({ content: 'A toast', type: 'warning' });
-    createToast({ content: 'A toast', type: 'error' });
+    createToast({ content: 'A toast', type: 'danger' });
     createToast({ content: 'A toast', type: 'info' });
-    createToast({ content: 'A toast', type: 'dark' });
   }, []);
 
   return (
@@ -32,4 +31,8 @@ export const Default = () => {
   );
 };
 
-Default.parameters = { theme: 'light' };
+export const Light = () => <Common />;
+Light.parameters = { theme: 'light' };
+
+export const Dark = () => <Common />;
+Dark.parameters = { theme: 'dark' };
