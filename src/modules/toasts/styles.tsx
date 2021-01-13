@@ -2,23 +2,38 @@ import { rem, transitions } from 'polished';
 import { css } from 'styled-components';
 
 export const toastStyles = css`
+  .Toastify__toast-container {
+    padding: ${rem(1)};
+    font-size: 0;
+
+    @media (min-height: ${rem(150)}) {
+      padding: ${({ theme }) => rem(theme.pulsar.size.box)};
+    }
+  }
+
   .Toastify__toast {
     border-radius: ${({ theme }) => rem(theme.pulsar.size.box)};
-    padding: ${({ theme }) => rem(theme.pulsar.size.drawer)};
+    padding: ${({ theme }) => rem(theme.pulsar.size.box)};
     font-family: inherit;
-    min-height: ${({ theme }) => rem(theme.pulsar.size.street)};
+    min-height: 0;
     margin-bottom: ${({ theme }) => rem(theme.pulsar.size.box)};
     box-shadow: ${({ theme }) => theme.pulsar.shadow.toast};
-    font-size: ${({ theme }) => rem(theme.pulsar.size.closet)};
+    font-size: ${({ theme }) => rem(theme.pulsar.size.drawer)};
     ${({ theme }) => transitions(['box-shadow'], theme.pulsar.duration.normal)};
 
     :hover {
       box-shadow: ${({ theme }) => theme.pulsar.shadow.toastHover};
     }
 
-    @media (min-width: ${rem(768)}) and (min-height: ${rem(375)}) {
-      font-size: ${({ theme }) => rem(theme.pulsar.size.room)};
+    @media (min-height: ${rem(150)}) {
+      font-size: ${({ theme }) => rem(theme.pulsar.size.closet)};
+      padding: ${({ theme }) => rem(theme.pulsar.size.drawer)};
+      min-height: ${({ theme }) => rem(theme.pulsar.size.street)};
       margin-bottom: ${({ theme }) => rem(theme.pulsar.size.drawer)};
+    }
+
+    @media (min-width: ${rem(768)}) and (min-height: ${rem(150)}) {
+      font-size: ${({ theme }) => rem(theme.pulsar.size.room)};
     }
   }
 
