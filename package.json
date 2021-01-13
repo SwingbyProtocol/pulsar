@@ -41,7 +41,8 @@
   "dependencies": {
     "@tippyjs/react": "^4.2.0",
     "nanoid": "3.1.18",
-    "qrcode.react": "^1.0.0"
+    "qrcode.react": "^1.0.0",
+    "react-toastify": "^6.2.0"
   },
   "peerDependencies": {
     "@types/styled-components": "^5.1.0",
