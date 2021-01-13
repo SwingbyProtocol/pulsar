@@ -33,7 +33,7 @@ export const toastStyles = css`
     }
 
     @media (min-width: ${rem(768)}) and (min-height: ${rem(150)}) {
-      font-size: ${({ theme }) => rem(theme.pulsar.size.room)};
+      font-size: ${({ theme }) => rem(theme.pulsar.size.closet)};
     }
   }
 
