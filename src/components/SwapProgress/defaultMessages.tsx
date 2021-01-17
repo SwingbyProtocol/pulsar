@@ -59,9 +59,9 @@ const values: { [k: string]: Messages } = {
   ja: {
     WAITING: '受信待ち',
     PENDING: '承認待ち',
-    SIGNING: 'スワップの署名中',
+    SIGNING: 'トランザクションへの署名中',
     SENDING: '受取アドレスへ送信中',
-    COMPLETED: 'スワップは完了しました！',
+    COMPLETED: 'スワップは完了されました！',
     SIGNING_REFUND: '送信元アドレスへ返金中',
     SENDING_REFUND: '送信元アドレスへ返金中',
     REFUNDED: '送信元アドレスへ返金済み',
