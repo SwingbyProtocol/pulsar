@@ -17,7 +17,12 @@ Pulsar is a library of [React](https://reactjs.org/) components built with
 
    ```tsx
    import React from 'react';
-   import { PulsarThemeProvider, Button, PulsarGlobalStyles } from '@swingby-protocol/pulsar';
+   import {
+     PulsarThemeProvider,
+     Button,
+     PulsarGlobalStyles,
+     PulsarToastContainer,
+   } from '@swingby-protocol/pulsar';
 
    export const MyApp = () => {
      return (
@@ -31,6 +36,7 @@ Pulsar is a library of [React](https://reactjs.org/) components built with
          <Button variant="primary" size="country">
            Click here!
          </Button>
+         <PulsarToastContainer /> {/* Put this somewhere near the root of your app if you are going to use toasts */}
        </PulsarThemeProvider>
      );
    };
