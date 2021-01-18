@@ -5,15 +5,24 @@ export const getCryptoAssetFormatter = ({
   displaySymbol,
   minimumFractionDigits = 2,
   maximumFractionDigits = 20,
+  minimumSignificantDigits,
+  maximumSignificantDigits,
+  notation,
 }: {
   locale: string;
   displaySymbol: string;
   minimumFractionDigits?: number;
   maximumFractionDigits?: number;
+  maximumSignificantDigits?: number;
+  minimumSignificantDigits?: number;
+  notation?: 'standard' | 'scientific' | 'engineering' | 'compact';
 }) => {
   const formatter = Intl.NumberFormat(locale, {
     minimumFractionDigits,
     maximumFractionDigits,
+    minimumSignificantDigits,
+    maximumSignificantDigits,
+    notation,
   });
 
   const format: typeof formatter.format = (number: number) =>

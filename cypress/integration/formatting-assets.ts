@@ -11,6 +11,7 @@ describe('Formatting assets', () => {
     cy.get('[data-testid="light.en-integer"]').should('have.text', '$12,345.00');
     cy.get('[data-testid="light.en-too-many-digist"]').should('have.text', '$12,345.68');
     cy.get('[data-testid="light.en-zero"]').should('have.text', '$0.00');
+    cy.get('[data-testid="light.en-compact"]').should('have.text', '$1.23M');
   });
 
   it('renders crypto currencies correctly', () => {
@@ -27,5 +28,6 @@ describe('Formatting assets', () => {
       `12,345.6789${NON_BREAKING_SPACE}BTC`,
     );
     cy.get('[data-testid="light.en-zero"]').should('have.text', `0.00${NON_BREAKING_SPACE}BTC`);
+    cy.get('[data-testid="light.en-compact"]').should('have.text', `1.23M${NON_BREAKING_SPACE}BTC`);
   });
 });

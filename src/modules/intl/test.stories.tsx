@@ -33,6 +33,14 @@ export const Fiat = () => {
       <div data-testid={buildTestId('en-zero')}>
         {getFiatAssetFormatter({ locale: 'en-US', currency: 'USD' }).format(0)}
       </div>
+      <div data-testid={buildTestId('en-compact')}>
+        {getFiatAssetFormatter({
+          locale: 'en-US',
+          currency: 'USD',
+          maximumSignificantDigits: 3,
+          notation: 'compact',
+        }).format(1234567.89)}
+      </div>
     </>
   );
 };
@@ -55,6 +63,14 @@ export const Crypto = () => {
       </div>
       <div data-testid={buildTestId('en-zero')}>
         {getCryptoAssetFormatter({ locale: 'en-US', displaySymbol: 'BTC' }).format(0)}
+      </div>
+      <div data-testid={buildTestId('en-compact')}>
+        {getCryptoAssetFormatter({
+          locale: 'en-US',
+          displaySymbol: 'BTC',
+          maximumSignificantDigits: 3,
+          notation: 'compact',
+        }).format(1234567.89)}
       </div>
     </>
   );
