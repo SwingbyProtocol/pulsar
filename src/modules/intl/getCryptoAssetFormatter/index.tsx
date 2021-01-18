@@ -23,7 +23,7 @@ export const getCryptoAssetFormatter = ({
     minimumSignificantDigits,
     maximumSignificantDigits,
     notation,
-  });
+  } as any);
 
   const format: typeof formatter.format = (number: number) =>
     `${formatter.format(number)}${displaySymbol ? NON_BREAKING_SPACE : ''}${displaySymbol}`;

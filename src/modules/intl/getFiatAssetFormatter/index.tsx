@@ -26,14 +26,17 @@ export const getFiatAssetFormatter = ({
       maximumSignificantDigits,
       notation,
       currencyDisplay: 'narrowSymbol',
-    });
+    } as any);
   } catch (e) {
     return new Intl.NumberFormat(locale, {
       style: 'currency',
       currency,
       minimumFractionDigits,
       maximumFractionDigits,
+      minimumSignificantDigits,
+      maximumSignificantDigits,
+      notation,
       currencyDisplay: 'symbol',
-    });
+    } as any);
   }
 };
