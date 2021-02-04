@@ -26,11 +26,11 @@ export const getStatusColor = ({
       return theme.pulsar.color.text.masked;
     case 'SENDING':
     case 'SIGNING':
-    case 'SENDING_REFUND':
-    case 'SIGNING_REFUND':
       return theme.pulsar.color.warning.normal;
     case 'COMPLETED':
       return theme.pulsar.color.success.normal;
+    case 'SENDING_REFUND':
+    case 'SIGNING_REFUND':
     case 'REFUNDED':
       return theme.pulsar.color.danger.normal;
     case 'EXPIRED':
