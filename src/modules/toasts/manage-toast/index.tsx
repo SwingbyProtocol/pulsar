@@ -28,7 +28,7 @@ export const createToast = ({
 
 export const updateToast = ({
   content,
-  autoClose,
+  autoClose = false,
   type,
   toastId,
 }: {
