@@ -6,7 +6,13 @@ export { useMatchMedia } from './modules/match-media';
 export { reset } from './modules/reset';
 export { useBuildTestId, Testable } from './modules/testing';
 export { getStatusColor } from './modules/swap-statuses';
-export { PulsarToastContainer, createToast } from './modules/toasts';
+export {
+  PulsarToastContainer,
+  createToast,
+  updateToast,
+  createOrUpdateToast,
+  dismissToast,
+} from './modules/toasts';
 
 export { AbstractAvatar } from './components/AbstractAvatar';
 export { AppLogo } from './components/AppLogo';

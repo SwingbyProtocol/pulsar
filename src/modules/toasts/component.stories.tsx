@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import { Button } from '../../components/Button';
 
 import { PulsarToastContainer } from './PulsarToastContainer';
-import { createToast } from './createToast';
+import { createToast } from './manage-toast';
 
 const meta: Meta = {
   title: 'Toasts',
