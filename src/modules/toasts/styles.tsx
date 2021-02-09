@@ -18,7 +18,7 @@ export const toastStyles = css`
     min-height: 0;
     margin-bottom: ${({ theme }) => rem(theme.pulsar.size.box)};
     box-shadow: ${({ theme }) => theme.pulsar.shadow.toast};
-    font-size: ${({ theme }) => rem(theme.pulsar.size.drawer)};
+    font-size: ${rem(10)};
     ${({ theme }) => transitions(['box-shadow'], theme.pulsar.duration.normal)};
 
     :hover {
