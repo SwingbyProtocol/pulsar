@@ -44,5 +44,6 @@ export { ReactComponent as ThemeLight } from './assets/ThemeLight.svg';
 export { ReactComponent as Tick } from './assets/Tick.svg';
 export { ReactComponent as TickCircle } from './assets/TickCircle.svg';
 export { ReactComponent as Twitter } from './assets/Twitter.svg';
+export { ReactComponent as Wallet } from './assets/Wallet.svg';
 export { ReactComponent as WalletConnect } from './assets/WalletConnect.svg';
 export { ReactComponent as YouTube } from './assets/YouTube.svg';
