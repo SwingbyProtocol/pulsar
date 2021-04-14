@@ -22,6 +22,7 @@ export { ReactComponent as Hamburger } from './assets/Hamburger.svg';
 export { ReactComponent as InfoCircle } from './assets/InfoCircle.svg';
 export { ReactComponent as Instagram } from './assets/Instagram.svg';
 export { ReactComponent as Ledger } from './assets/Ledger.svg';
+export { ReactComponent as Lock } from './assets/Lock.svg';
 export { ReactComponent as Medium } from './assets/Medium.svg';
 export { ReactComponent as NetworkCapacity } from './assets/NetworkCapacity.svg';
 export { ReactComponent as NetworkRewards } from './assets/NetworkRewards.svg';
