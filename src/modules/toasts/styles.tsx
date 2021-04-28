@@ -19,6 +19,7 @@ export const toastStyles = css`
     margin-bottom: ${({ theme }) => rem(theme.pulsar.size.box)};
     box-shadow: ${({ theme }) => theme.pulsar.shadow.toast};
     font-size: ${rem(10)};
+    cursor: inherit;
     ${({ theme }) => transitions(['box-shadow'], theme.pulsar.duration.normal)};
 
     :hover {

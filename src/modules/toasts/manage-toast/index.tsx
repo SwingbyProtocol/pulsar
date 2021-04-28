@@ -20,7 +20,7 @@ export const createToast = ({
     autoClose: autoClose === true ? AUTO_CLOSE_DEFAULT_DURATION : autoClose,
     hideProgressBar: true,
     position: 'top-center',
-    closeOnClick: true,
+    closeOnClick: false,
     toastId,
     type: getOriginalType(type),
   });
@@ -41,6 +41,7 @@ export const updateToast = ({
     render: content,
     autoClose: autoClose === true ? AUTO_CLOSE_DEFAULT_DURATION : autoClose,
     type: type ? getOriginalType(type) : undefined,
+    closeOnClick: false,
   });
 
 export const createOrUpdateToast = (params: {
