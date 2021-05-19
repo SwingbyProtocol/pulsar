@@ -2,6 +2,8 @@ import * as logos from './urls';
 
 export const getCoinLogo = ({ symbol }: { symbol: string }) => {
   switch (symbol) {
+    case 'ETH':
+      return logos.CoinEth;
     case 'BTC':
       return logos.CoinBtc;
     case 'BTCB':
