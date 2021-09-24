@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import { animated, useTransition } from 'react-spring';
 
 import { baseLogger } from '../../modules/logger';
@@ -17,7 +17,13 @@ type Props = Testable & {
 
 const logger = baseLogger.extend('Modal');
 
-export const Component = ({ open, children, className, onClose, 'data-testid': testId }: Props) => {
+export const Component = ({
+  open,
+  children,
+  className,
+  onClose: onCloseParam,
+  'data-testid': testId,
+}: Props) => {
   const { buildTestId } = useBuildTestId({ id: testId });
   const box = useRef<HTMLDivElement | null>(null);
 
@@ -32,6 +38,17 @@ export const Component = ({ open, children, className, onClose, 'data-testid': t
     enter: { opacity: 1, transform: 'scale(1)' },
     leave: { opacity: 0, transform: 'scale(0.5)' },
   });
+
+  const onClose = useMemo(() => {
+    if (typeof onCloseParam !== 'function') {
+      return undefined;
+    }
+
+    return () => {
+      logger('`onClose()` called.');
+      onCloseParam();
+    };
+  }, [onCloseParam]);
 
   useEffect(() => {
     if (typeof window === 'undefined' || !onClose || !open) return;
