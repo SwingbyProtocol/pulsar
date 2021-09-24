@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { animated, useTransition } from 'react-spring';
 
+import { baseLogger } from '../../modules/logger';
 import { Testable, useBuildTestId } from '../../modules/testing';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
@@ -13,6 +14,8 @@ type Props = Testable & {
   className?: string;
   onClose?: () => void;
 };
+
+const logger = baseLogger.extend('Modal');
 
 export const Component = ({ open, children, className, onClose, 'data-testid': testId }: Props) => {
   const { buildTestId } = useBuildTestId({ id: testId });
@@ -36,7 +39,16 @@ export const Component = ({ open, children, className, onClose, 'data-testid': t
     const listener = (evt: WindowEventMap['click']) => {
       if (!box.current || !evt.target) return;
       if (!box.current.contains(evt.target as Node)) {
+        logger(
+          'Listened to a click outside of the modal. Will call `onClose()`.\nevt.target=%O',
+          evt.target,
+        );
         onClose();
+      } else {
+        logger(
+          'Listened to a click inside of the modal. Will *not* call `onClose()`.\nevt.target=%O',
+          evt.target,
+        );
       }
     };
 
