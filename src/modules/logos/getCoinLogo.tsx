@@ -19,13 +19,17 @@ export const getCoinLogo = ({ symbol }: { symbol: string }) => {
     case 'BTCE':
     case 'WBTC':
     case 'WBTC.ERC20':
+    case 'WBTC.SKYPOOL':
     case 'WBTC__ERC20':
+    case 'WBTC__SKYPOOL':
       return logos.CoinWbtc;
     case 'sbBTC':
     case 'sbBTC.ERC20':
     case 'sbBTC.BEP20':
+    case 'sbBTC.SKYPOOL':
     case 'sbBTC__ERC20':
     case 'sbBTC__BEP20':
+    case 'sbBTC__SKYPOOL':
       return logos.CoinSbbtc;
     default:
       return undefined;
