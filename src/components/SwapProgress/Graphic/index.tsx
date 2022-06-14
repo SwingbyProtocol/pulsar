@@ -26,6 +26,7 @@ export const Graphic = ({
   const progress = (() => {
     switch (status) {
       case 'WAITING':
+      case 'EXECUTION_PENDING':
         return 0;
       case 'PENDING':
       case 'SIGNING':
@@ -44,6 +45,7 @@ export const Graphic = ({
 
   const completedColor = useMemo(() => {
     switch (status) {
+      case 'EXECUTION_PENDING':
       case 'PENDING':
       case 'WAITING':
         return getStatusColor({ theme, status: 'SENDING' });

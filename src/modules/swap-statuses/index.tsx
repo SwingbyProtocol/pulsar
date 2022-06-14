@@ -2,6 +2,7 @@ import { PulsarThemeType } from '../themes';
 
 export const SWAP_STATUSES = [
   'WAITING',
+  'EXECUTION_PENDING',
   'PENDING',
   'SIGNING',
   'SENDING',
@@ -22,6 +23,7 @@ export const getStatusColor = ({
 }) => {
   switch (status) {
     case 'WAITING':
+    case 'EXECUTION_PENDING':
     case 'PENDING':
       return theme.pulsar.color.text.masked;
     case 'SENDING':
