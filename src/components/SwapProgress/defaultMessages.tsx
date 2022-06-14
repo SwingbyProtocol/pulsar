@@ -3,7 +3,8 @@ import type { Messages } from './component';
 const values: { [k: string]: Messages } = {
   en: {
     WAITING: 'Waiting for your deposit…',
-    PENDING: 'Transaction found.<br />Waiting for confirmations…',
+    EXECUTION_PENDING: 'Transaction found.<br />Waiting for confirmations…',
+    PENDING: 'Deposit found.<br />Waiting for confirmations…',
     SIGNING: 'Signing your swap…',
     SENDING: 'Sending to your address…',
     COMPLETED: 'Swap completed!',
@@ -14,7 +15,8 @@ const values: { [k: string]: Messages } = {
   },
   es: {
     WAITING: 'Esperando tu depósito…',
-    PENDING: 'Transacción encontrada.<br />Esperando confirmaciones…',
+    EXECUTION_PENDING: 'Transacción encontrada.<br />Esperando confirmaciones…',
+    PENDING: 'Deposito encontrado.<br />Esperando confirmaciones…',
     SIGNING: 'Firmando tu cambio…',
     SENDING: 'Enviando a tu dirección…',
     COMPLETED: '¡Cambio completado!',
@@ -25,7 +27,8 @@ const values: { [k: string]: Messages } = {
   },
   gl: {
     WAITING: 'Esperando o teu depósito…',
-    PENDING: 'Transacción atopada.<br />Esperando confirmacións…',
+    EXECUTION_PENDING: 'Transacción atopada.<br />Esperando confirmacións…',
+    PENDING: 'Depósito atopado.<br />Esperando confirmacións…',
     SIGNING: 'Firmando o teu cambio…',
     SENDING: 'Enviando ao teu enderezo…',
     COMPLETED: '¡Cambio completado!',
@@ -36,7 +39,8 @@ const values: { [k: string]: Messages } = {
   },
   'zh-TW': {
     WAITING: '正在等待您的存款交易',
-    PENDING: '網絡已檢測到您的存款交易<br />正在交易確認中',
+    EXECUTION_PENDING: '網絡已檢測到您的存款交易<br />正在交易確認中',
+    PENDING: '发现存款<br />正在交易確認中',
     SIGNING: '正在簽名您的兌換',
     SENDING: '發送至您的收款地址',
     COMPLETED: '完成此兌換！',
@@ -47,7 +51,8 @@ const values: { [k: string]: Messages } = {
   },
   zh: {
     WAITING: '正在等待您的存款交易',
-    PENDING: '网络已检测到您的存款交易<br />正在交易确认中',
+    EXECUTION_PENDING: '网络已检测到您的存款交易<br />正在交易确认中',
+    PENDING: '發現存款<br />正在交易确认中',
     SIGNING: '正在签名您的兑换',
     SENDING: '发送至您的收款地址',
     COMPLETED: '完成此兑换！',
@@ -58,6 +63,7 @@ const values: { [k: string]: Messages } = {
   },
   ja: {
     WAITING: '受信待ち',
+    EXECUTION_PENDING: '承認待ち',
     PENDING: '承認待ち',
     SIGNING: 'トランザクションへの署名中',
     SENDING: '受取アドレスへ送信中',
